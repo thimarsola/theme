@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+:root {
+  --font-base: 50%;
+  --gap: 1.5rem;
+  --text-regular: "Montserrat Regular", sans-serif;
+  --text-bold: "Montserrat Bold", sans-serif;
+  --title-medium: "Nunito Medium", sans-serif;
+  --title-bold: "Nunito Extra-Bold", sans-serif;
+
+  @include breakpoint(md) {
+    --font-base: 62.5%;
+  }
+
+  @each $color, $shade in $colors {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: #{$value};
+    }
+  }
+
+  @each $screen-size, $property in $type-scale {
+    --fs-#{$screen-size}: #{$property};
+  }
+
+  @each $screen-size, $property in $container-max-widths {
+    --#{$screen-size}: #{$property};
+  }
+}

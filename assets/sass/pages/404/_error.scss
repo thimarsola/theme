@@ -1,0 +1,15 @@
+@use "../../abstracts" as *;
+
+.error{
+    @include padding(var(--fs-1000));
+    text-align: center;
+
+    &__header{
+        margin-bottom: var(--fs-800);
+
+        h1{
+            margin-bottom: var(--fs-400);
+            font-size: var(--fs-1000);
+        }
+    }
+}

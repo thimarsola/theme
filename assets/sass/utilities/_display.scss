@@ -1,0 +1,60 @@
+@use '../abstracts/mixins' as *;
+
+.d-none {
+  display: none !important;
+}
+
+.d-fixed {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  @include transition(position);
+}
+
+.d-inline{
+  width: 100%;
+  display: inline-block;
+}
+
+.d-block{
+  display: block;
+}
+
+.d-flex{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.jc-between{
+  justify-content: space-between;
+}
+
+.jc-center{
+  justify-content: center;
+}
+
+.jc-start{
+  justify-content: flex-start !important;
+}
+
+.ai-center{
+  align-items: center;
+}
+
+.ai-stretch{
+  align-items: stretch;
+}
+
+.f-column{
+  flex-direction: column;
+}
+
+.f-row{
+  flex-direction: row;
+}
+
+.nowrap{
+  flex-wrap: nowrap;
+}

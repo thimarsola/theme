@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato - %site-name%</title>
+
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            width: 100vw;
+            background: #EDF2F7;
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main{
+            margin: 0 auto;
+            max-width: 600px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,.15);
+            border-radius: .5rem;
+            line-height: 1.5 !important;
+        }
+
+        .header{
+            margin-bottom: 2rem;
+            width: 100%;
+            padding: 30px 15px;
+            text-align: center;
+            font-weight: 900;
+            background: #fafafa;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .header svg{
+            width: 2rem;
+            fill: #e63946 !important;
+        }
+
+        .header h1{
+            font-size: 1.5rem;
+        }
+
+        .content{
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        b{
+            font-weight: bold;
+        }
+
+        .box{
+            margin-top: 2rem;
+            width: 100%;
+            padding: 30px;
+            text-align: justify;
+            background: #f8f8f8;
+        }
+
+        .footer{
+            margin-top: 2rem;
+            font-size: .75rem;
+            text-align: center;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+        <h1>Formulário de Contato - %site-name%</h1>
+    </div>
+
+    <p>Olá %site-name%,</p>
+    <br>
+    <p>Me chamo <b>%name%</b>, estou entrando em contato através do formulário de contato do site.</p>
+
+    <div class="content">
+        <p>Aqui estão os meus dados para o contato</p>
+        <br>
+        <p><b>E-mail:</b><br>%mail%</p>
+        <br>
+        <p><b>Telefone:</b><br>%phone%</p>
+        <br>
+    </div>
+
+    <div class="box">
+        <p><b>Mensagem:</b>
+        <p>%message%</p>
+    </div>
+
+    <div class="footer">
+        <br>
+        <small>* E-mail enviado automaticamente do formulário de contato do site *</small>
+    </div>
+</div>
+</body>
+</html>

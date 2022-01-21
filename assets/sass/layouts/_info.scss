@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.info{
+  position: relative;
+
+  &::before{
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    display: block;
+    width: 58rem;
+    height: 100%;
+    content: '';
+    background: var(--clr-primary-500);
+    transform: skewX(20deg);
+    border-right: 5px solid var(--clr-white-500);
+    z-index: 0;
+  }
+
+  &__social{
+    position: relative;
+    z-index: 10;
+
+    ul{
+      li{
+        color: var(--clr-white-500);
+        @include transition(color);
+
+        &:hover{
+          color: var(--clr-dark-blue-500);
+          @include transition(color);
+        }
+      }
+    }
+  }
+
+  //breakpoint tablet
+  @include mq(md){
+    &::before{
+      width: 25rem;
+    }
+  }
+
+  //breakpoint mobile
+  @include mq(sm){
+    display: none !important;
+  }
+}

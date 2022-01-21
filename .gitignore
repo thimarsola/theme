@@ -1,0 +1,4 @@
+node_modules/**
+vendor/**
+source/Config.php
+composer.phar

@@ -1,0 +1,31 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "Website develop by Goognet Digital Solution Agency for the name",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./assets/sass/:./dist/css/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thimarsola/Projeto-name.git"
+  },
+  "author": "Thiago Marsola | Goognet Solução Digital",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thimarsola/Projeto-name/issues"
+  },
+  "homepage": "https://github.com/thimarsola/Projeto-name#readme",
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-image": "6.2.1",
+    "gulp-watch": "5.0.1",
+    "gulp-webp": "4.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "magnific-popup": "^1.1.0",
+    "sweetalert2": "^11.1.5"
+  }
+}
+

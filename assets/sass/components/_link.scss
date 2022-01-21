@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+@each $color, $shade in $colors {
+    @each $prop, $value in $shade {
+        @if $value == white {
+            .link-#{$color}-#{$prop} {
+                color: $value;
+                @include transition(all);
+
+                &:hover, &:focus {
+                    color: var(--clr-primary-500);
+                    @include transition(all);
+                }
+            }
+        }@else if $color == neutral{
+            .link-#{$color}-#{$prop} {
+                color: $value;
+                @include transition(all);
+
+                &:hover, &:focus {
+                    color: var(--clr-primary-500);
+                    @include transition(all);
+                }
+            }
+        }@else if $color == dark-blue{
+            .link-#{$color}-#{$prop} {
+                color: $value;
+                @include transition(all);
+
+                &:hover, &:focus {
+                    color: var(--clr-primary-500);
+                    @include transition(all);
+                }
+            }
+        }@else {
+            .link-#{$color}-#{$prop} {
+                color: $value;
+                @include transition(all);
+
+                &:hover, &:focus {
+                    color: darken($value, 10%);
+                    @include transition(all);
+                }
+            }
+        }
+    }
+}

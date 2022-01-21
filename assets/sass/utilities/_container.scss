@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+.container {
+    display: block;
+    margin: 0 auto;
+    padding: 0 calc(var(--gap) * 2);
+    width: 100%;
+
+    @include breakpoint(sm) {
+        margin: 0 auto;
+        padding: 0 var(--gap);
+        max-width: var(--sm);
+    }
+
+    @include breakpoint(md) {
+        margin: 0 auto;
+        padding: 0 var(--gap);
+        max-width: var(--md);
+    }
+
+    @include breakpoint(lg) {
+        margin: 0 auto;
+        padding: 0 var(--gap);
+        max-width: var(--lg);
+    }
+
+    @include breakpoint(xl) {
+        margin: 0 auto;
+        padding: 0 var(--gap);
+        max-width: var(--xl);
+    }
+
+    //@include breakpoint(xxl) {
+    //    margin: 0 auto;
+    //    padding: 0 var(--gap);
+    //    max-width: var(--xxl);
+    //}
+}
+
+.container-fluid{
+    display: block;
+    margin: 0 auto;
+    padding: 0 calc(var(--gap) * 2);
+    width: 100%;
+}
+
+.container-lg{
+  display: block;
+  margin: 0 auto;
+  padding: 0 calc(var(--gap) * 2);
+  max-width: 163rem;
+
+  @include mq(sm){
+    padding: 0 var(--gap);
+  }
+}

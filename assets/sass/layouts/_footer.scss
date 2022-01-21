@@ -1,0 +1,119 @@
+@use '../abstracts' as *;
+
+.footer{
+
+  &__cta{
+    margin-bottom: -8rem;
+
+    &__row{
+      position: relative;
+      grid-template-columns: repeat(2, 1fr);
+
+      &::before{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 11.6rem;
+        content: '';
+        background: var(--clr-light-blue-500);
+        transform: translateY(-50%);
+        z-index: 0;
+      }
+
+      &__card{
+        z-index: 1;
+
+        a{
+          font-size: 1.5rem;
+
+          &:hover{
+            color: var(--clr-blue-500);
+          }
+        }
+      }
+    }
+  }
+
+  &__content{
+    padding: 14.8rem 0 8rem 0;
+    background:{
+      image: url("../images/background-footer.png");
+      size: contain;
+      position: top right;
+      repeat: no-repeat;
+    }
+
+    &__row{
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      font-size: 1.4rem;
+
+      &__card{
+        &:nth-child(1){
+          i{
+            font-size: 2rem;
+          }
+        }
+
+        &:nth-child(2){
+          ul{
+            display: flex;
+            flex-direction: column;
+            gap: var(--fs-200);
+
+            li{
+              a{
+                color: var(--clr-white-500);
+                @include transition(color);
+
+                &:hover{
+                  color: var(--clr-primary-500);
+                  @include transition(color)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright{
+    font-size: 1.5rem;
+    line-height: 1.1 !important;
+  }
+
+  &__developer{
+    &__row{
+      font-size: 1.5rem;
+      line-height: 1.1 !important;
+
+      a{
+        &:hover{
+          color: darken($primary, 20%);
+        }
+
+        i{
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+
+  //breakpoint mobile
+  @include mq(sm){
+    &__cta{
+      display: none;
+    }
+
+    &__content{
+      padding: var(--fs-600) 0;
+    }
+
+    &__developer{
+      &__row{
+        gap: var(--fs-100);
+      }
+    }
+  }
+}

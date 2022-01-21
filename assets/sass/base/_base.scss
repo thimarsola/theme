@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+body {
+    min-height: 100vh;
+
+    @include mq(sm) {
+        display: block;
+    }
+}
