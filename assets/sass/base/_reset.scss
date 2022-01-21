@@ -1,0 +1,176 @@
+@use '../abstracts' as *;
+
+// Box sizing rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove default margin
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+}
+
+span,
+abbr{
+  font-family: inherit !important;
+}
+
+abbr{
+  text-decoration: none;
+}
+
+// Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-position: inside;
+}
+
+// Set core root defaults
+html {
+  scroll-behavior: smooth;
+}
+
+// Set core body defaults
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+// A elements that don't have a class get default styles
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: auto;
+}
+
+i {
+  color: inherit !important;
+
+  &::before {
+    color: inherit !important;
+  }
+}
+
+// Make images easier to work with
+img{
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+iframe{
+  border: none;
+}
+
+// Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  line-height: 1.5;
+  border: 2px solid var(--clr-neutral-500);
+  border-radius: 0;
+  background: var(--clr-white-500);
+  transform: scale(1);
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0 !important;
+  @include transition(all);
+
+  &:focus{
+    border-color: rgba(#000, .05);
+    @include transition(all);
+  }
+
+  &::-webkit-input-placeholder {
+    font: {
+      size: var(--fs-200) !important;
+    }
+
+    color: inherit;
+  }
+
+  &::-moz-placeholder {
+    font: {
+      size: var(--fs-200) !important;
+    }
+    color: var(--clr-gray-500);
+  }
+
+  &:-ms-input-placeholder {
+    font: {
+      size: var(--fs-200) !important;
+    }
+    color: var(--clr-gray-500);
+  }
+
+  &::-ms-input-placeholder {
+    font: {
+      size: var(--fs-200) !important;
+    }
+    color: var(--clr-gray-500);
+  }
+
+  &::placeholder {
+    font: {
+      size: var(--fs-200) !important;
+    }
+    color: var(--clr-gray-500);
+  }
+
+  @include mq(sm){
+    &::-webkit-input-placeholder, &::-moz-placeholder,  &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder{
+      font-size: 1.5rem !important;
+    }
+  }
+}
+
+textarea {
+  min-height: 15rem;
+  resize: none;
+}
+
+// Remove all animations, transitions and smooth scroll for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

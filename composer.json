@@ -1,0 +1,27 @@
+{
+    "name": "thiagomarsola/name",
+    "description": "Website develop by Goognet Digital Solution Agency for the name",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thiago",
+            "email": "tmarsol94@gmail.com",
+            "role": "Developer",
+            "homepage": "https://goognet.com.br"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.5",
+        "squizlabs/php_codesniffer": "^3.6",
+        "matthiasmullie/minify": "^1.3"
+    }
+}
