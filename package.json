@@ -4,7 +4,8 @@
   "description": "Website develop by Goognet Digital Solution Agency for the name",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./assets/sass/:./dist/css/ --watch"
+    "sass": "sass --no-source-map ./assets/sass/:./dist/css/ --watch",
+    "build": "postcss --no-map ./dist/css/*.css --use autoprefixer -d ./dist/css/"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
     "gulp": "4.0.2",
     "gulp-image": "6.2.1",
     "gulp-watch": "5.0.1",
-    "gulp-webp": "4.0.1"
+    "gulp-webp": "4.0.1",
+    "autoprefixer": "^10.4.2"
   },
   "dependencies": {
     "jquery": "^3.6.0",
