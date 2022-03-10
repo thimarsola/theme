@@ -1,33 +1,47 @@
 {
-  "name": "name",
-  "version": "1.0.0",
-  "description": "Website develop by Goognet Digital Solution Agency for the name",
-  "main": "index.js",
-  "scripts": {
-    "sass": "sass --no-source-map ./assets/sass/:./dist/css/ --watch",
-    "build": "postcss --no-map ./dist/css/*.css --use autoprefixer -d ./dist/css/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thimarsola/Projeto-name.git"
-  },
-  "author": "Thiago Marsola | Goognet Solução Digital",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thimarsola/Projeto-name/issues"
-  },
-  "homepage": "https://github.com/thimarsola/Projeto-name#readme",
-  "devDependencies": {
-    "gulp": "4.0.2",
-    "gulp-image": "6.2.1",
-    "gulp-watch": "5.0.1",
-    "gulp-webp": "4.0.1",
-    "autoprefixer": "^10.4.2"
-  },
-  "dependencies": {
-    "jquery": "^3.6.0",
-    "magnific-popup": "^1.1.0",
-    "sweetalert2": "^11.1.5"
-  }
+   "name": "name",
+   "version": "1.0.0",
+   "description": "Website develop by Goognet Digital Solution Agency for the name",
+   "main": "index.php",
+   "type": "module",
+   "scripts": {
+      "image:compress": "node compress-image.js",
+      "image:convert": "node convert-image.js",
+      "build:sass": "sass --no-source-map ./assets/sass/:./dist/css/",
+      "watch:sass": "sass --no-source-map ./assets/sass/:./dist/css/ --watch",
+      "watch:image": "onchange './assets/images/*' -- npm-run-all --parallel image:*",
+      "watch": "npm-run-all --parallel watch:*",
+      "image": "npm-run-all --parallel image:*",
+      "start": "npm-run-all --parallel watch",
+      "build": "postcss ./dist/css/*.css -u autoprefixer -r --no-map",
+      "production": "postcss ./dist/css/*.css -u autoprefixer cssnano -r --no-map"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/thimarsola/Projeto-name.git"
+   },
+   "author": "Thiago Marsola | Goognet Solução Digital",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/thimarsola/Projeto-name/issues"
+   },
+   "homepage": "https://github.com/thimarsola/Projeto-name#readme",
+   "devDependencies": {
+      "autoprefixer": "^10.4.2",
+      "compress-images": "^2.0.5",
+      "cssnano": "^5.1.1",
+      "gifsicle": "^5.2.1",
+      "imagemin": "^8.0.1",
+      "imagemin-webp": "^7.0.0",
+      "npm-run-all": "^4.1.5",
+      "onchange": "^7.1.0",
+      "pngquant-bin": "^6.0.1",
+      "postcss-cli": "^9.1.0",
+      "sass": "^1.49.9"
+   },
+   "dependencies": {
+      "jquery": "^3.6.0",
+      "magnific-popup": "^1.1.0",
+      "sweetalert2": "^11.1.5"
+   }
 }
-
