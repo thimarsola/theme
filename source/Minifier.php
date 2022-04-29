@@ -1,16 +1,17 @@
 <?php
+
 /**
  * CSS
  */
 $homeCss = new MatthiasMullie\Minify\CSS();
-$homeCss->add(dirname(__DIR__, 1) . "/assets/css/style.css");
+$homeCss->add(dirname(__DIR__, 1) . "/dist/css/style.css");
 $homeCss->minify(dirname(__DIR__, 1) . "/dist/css/style.min.css");
 
 /**
  * 404
  */
 $errorCss = new MatthiasMullie\Minify\CSS();
-$errorCss->add(dirname(__DIR__, 1) . "/assets/css/style-error.css");
+$errorCss->add(dirname(__DIR__, 1) . "/dist/css/style-error.css");
 $errorCss->minify(dirname(__DIR__, 1) . "/dist/css/style-error.min.css");
 
 /**
