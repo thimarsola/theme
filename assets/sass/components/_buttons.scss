@@ -1,61 +1,60 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .btn {
-  display: inline-block !important;
-  margin: 0;
-  padding: var(--fs-200) var(--fs-500);
-  cursor: pointer;
-  outline: none;
-  border: none;
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-  line-height: 1.1 !important;
-  border-radius: 3rem;
+   display: inline-block !important;
+   margin: 0;
+   padding: var(--fs-200) var(--fs-500);
+   cursor: pointer;
+   outline: none;
+   border: none;
+   transform: scale(1);
+   transition: transform 0.3s ease-in-out;
+   line-height: 1.1 !important;
 
-  font: {
-    family: var(--text-bold) !important;
-    size: var(--fs-200);
-  }
+   font: {
+      family: var(--text-bold) !important;
+      size: var(--fs-200);
+   }
 
-  text-transform: uppercase;
+   text-transform: uppercase;
 
-  &:active {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
+   &:active {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+   }
 }
 
-.btn-block{
-  display: block !important;
-  width: 100%;
+.btn-block {
+   display: block !important;
+   width: 100%;
 }
 
 @each $color, $shade in $colors {
-  @each $prop, $value in $shade {
-    @if $value == white {
-      .btn-#{$color}-#{$prop} {
-        background-color: $value;
-        color: var(--clr-primary-500);
-        @include transition(all);
+   @each $prop, $value in $shade {
+      @if $color == #{white} {
+         .btn-#{$color}-#{$prop} {
+            background-color: $value;
+            color: var(--clr-primary-500);
+            @include transition(all);
 
-        &:hover {
-          color: var(--clr-white-500);
-          background-color: var(--clr-primary-500);
-          @include transition(all);
-        }
-      }
-    }@else {
-      .btn-#{$color}-#{$prop} {
-        background-color: $value;
-        color: var(--clr-dark-blue-500);
-        @include transition(all);
+            &:hover {
+               color: var(--clr-white-500);
+               background-color: var(--clr-primary-500);
+               @include transition(all);
+            }
+         }
+      } @else {
+         .btn-#{$color}-#{$prop} {
+            background-color: $value;
+            color: var(--clr-dark-blue-500);
+            @include transition(all);
 
-        &:hover {
-          color: var(--clr-white-500);
-          background-color: darken($value, 10%);
-          @include transition(all);
-        }
+            &:hover {
+               color: var(--clr-white-500);
+               background-color: darken($value, 10%);
+               @include transition(all);
+            }
+         }
       }
-    }
-  }
+   }
 }

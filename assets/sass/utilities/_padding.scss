@@ -6,10 +6,11 @@
     }
 
     .py-#{$i}{
-        padding: calc(var(--fs-100) * #{$i}) 0;
+        padding-top: calc(var(--fs-100) * #{$i});
+        padding-bottom: calc(var(--fs-100) * #{$i});
     }
     .px-#{$i}{
-        padding: 0 calc(var(--fs-100) * #{$i});
+        padding-inline: calc(var(--fs-100) * #{$i});
     }
 
     .pt-#{$i}{

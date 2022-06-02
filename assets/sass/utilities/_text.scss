@@ -1,27 +1,47 @@
-.t-center{
+.text-center{
     text-align: center;
 }
 
-.t-right{
+.text-right{
     text-align: right;
 }
 
-.t-left{
+.text-left{
     text-align: left;
 }
 
-.t-justify{
+.text-justify{
     text-align: justify;
 }
 
-.t-uppercase{
+.uppercase{
     text-transform: uppercase;
 }
 
-.t-bold{
-  font-family: var(--bold) !important;
+.text-bold{
+  font-family: var(--text-bold) !important;
 }
 
-.t-small{
+.text-black{
+  font-family: var(--text-black) !important;
+}
+
+.text-xs{
   font-size: 12px;
+}
+
+.text-sm{
+  font-size: 14px;
+}
+
+.text-lg{
+   font-size: 1.8rem;
+}
+
+.text-xl{
+   font-size: 2rem;
+}
+
+.align-middle{
+   vertical-align: middle;
 }

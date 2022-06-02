@@ -1,0 +1,80 @@
+@for $i from 1 through 10{
+    .w-#{$i}{
+        width: calc(var(--fs-100) * #{$i});
+    }
+}
+
+.w-full{
+   width: 100%;
+}
+
+.w-min{
+   width: min-content;
+}
+
+.w-max{
+   width: max-content;
+}
+
+.w-screen{
+   width: 100vw;
+}
+
+.min-w-full{
+   min-width: 100%;
+}
+
+.min-w-max{
+   min-width: max-content;
+}
+
+.max-w-full	{
+   max-width: 100%;
+}
+
+.max-w-max{
+   max-width: max-content;
+}
+
+@for $i from 1 through 10{
+    .h-#{$i}{
+        height: calc(var(--fs-100) * #{$i});
+    }
+}
+
+
+.h-full{
+   height: 100%;
+}
+
+.h-min{
+   height: min-content;
+}
+
+.h-max{
+   height: max-content;
+}
+
+.h-screen{
+   height: 100vh !important;
+}
+
+.min-h-full{
+   min-height: 100%;
+}
+
+.min-h-screen{
+   min-height: 100vh;
+}
+
+.min-h-max{
+   min-height: max-content;
+}
+
+.max-h-full	{
+   max-height: 100%;
+}
+
+.max-w-max{
+   max-height: max-content;
+}

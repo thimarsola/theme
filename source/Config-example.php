@@ -25,7 +25,7 @@ define("SITE", [
 /**
  * SITE MINIFY
  */
-if ($_SERVER["SERVER_NAME"] == "localhost") {
+if ($_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["SERVER_NAME"] == "localhost") {
    require __DIR__ . '/Minifier.php';
 }
 
@@ -44,12 +44,12 @@ define("SOCIAL", [
  * MAIL CONNECT
  */
 define("MAIL", [
-   "host" => "mail.domain.com.br",
-   "port" => "587",
-   "user" => "sender@domain.com.br",
-   "passwd" => "password",
+   "host" => "mailhog",
+   "port" => "1025",
+   "user" => null,
+   "passwd" => null,
    "from_name" => "Website Name",
-   "from_email" => "name@domain.com.br"
+   "from_email" => "hello@example.com"
 ]);
 
 /**
@@ -68,7 +68,7 @@ define("REGION", [
 define("CONTACT", [
    "whatsapp" => [
       "number" => "(11) 91234-5678",
-      "message" => "Olá Pepetos, gostaria de maiores informações",
+      "message" => "Olá, gostaria de maiores informações",
    ],
    "phone" => [
       "01" => "(11) 1234-5678",

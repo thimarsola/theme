@@ -3,10 +3,9 @@
    "version": "1.0.0",
    "description": "Website develop by Goognet Digital Solution Agency for the name",
    "main": "index.php",
-   "type": "module",
    "scripts": {
-      "image:compress": "node compress-image.js",
-      "image:convert": "node convert-image.js",
+      "image:compress": "node compress-image.mjs",
+      "image:convert": "node convert-image.mjs",
       "build:sass": "sass --no-source-map ./assets/sass/:./dist/css/",
       "watch:sass": "sass --no-source-map ./assets/sass/:./dist/css/ --watch",
       "watch:image": "onchange './assets/images/*' -- npm-run-all --parallel image:*",
@@ -42,6 +41,7 @@
    "dependencies": {
       "jquery": "^3.6.0",
       "magnific-popup": "^1.1.0",
+      "owl.carousel": "^2.3.4",
       "sweetalert2": "^11.1.5"
    }
 }

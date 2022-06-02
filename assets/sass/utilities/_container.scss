@@ -48,7 +48,7 @@
   display: block;
   margin: 0 auto;
   padding: 0 calc(var(--gap) * 2);
-  max-width: 163rem;
+  max-width: calc(124rem + (var(--gap) * 4));
 
   @include mq(sm){
     padding: 0 var(--gap);

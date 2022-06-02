@@ -1,9 +1,27 @@
-.radius{
-    border-radius: 5px;
-    overflow: hidden;
+.rounded-sm{
+    border-radius: 2px;
 }
 
-.radius-lg{
-  border-radius: var(--fs-200);
-  overflow: hidden;
+.rounded{
+    border-radius: 4px;
+}
+
+.rounded-md{
+    border-radius: 6px;
+}
+
+.rounded-lg{
+    border-radius: 8px;
+}
+
+.rounded-xl{
+    border-radius: 12px;
+}
+
+.rounded-2xl{
+    border-radius: 24px;
+}
+
+.rounded-full{
+   border-radius: 9999px;
 }

@@ -2,10 +2,11 @@
 
 @for $i from 1 through 10{
     .my-#{$i}{
-        margin: calc(var(--fs-100) * #{$i}) 0;
+        margin-top: calc(var(--fs-100) * #{$i});
+        margin-bottom: calc(var(--fs-100) * #{$i});
     }
     .mx-#{$i}{
-        margin: 0 calc(var(--fs-100) * #{$i});
+        margin-inline: calc(var(--fs-100) * #{$i});
     }
 
     .mt-#{$i}{
@@ -23,4 +24,20 @@
     .mr-#{$i}{
         margin-right: calc(var(--fs-100) * #{$i});
     }
+}
+
+.mt-auto{
+   margin-top: auto;
+}
+
+.mr-auto{
+   margin-right: auto;
+}
+
+.mb-auto{
+   margin-bottom: auto;
+}
+
+.ml-auto{
+   margin-left: auto;
 }
