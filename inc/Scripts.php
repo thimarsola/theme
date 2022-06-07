@@ -5,6 +5,10 @@ function loadJS()
 {
     if(is_home()){
         wp_enqueue_script('scripts', get_template_directory_uri() . '/dist/js/script-home.min.js', [], null, true);
+    }elseif (is_page() || is_archive()){
+        wp_enqueue_script('pages', get_template_directory_uri() . '/dist/js/script-pages.min.js', [], null, true);
+    }elseif (is_single()){
+        wp_enqueue_script('single', get_template_directory_uri() . '/dist/js/script-single.min.js', [], null, true);
     }elseif (is_404()){
         wp_enqueue_script('error', get_template_directory_uri() . '/dist/js/script-error.min.js', [], null, true);
     }

@@ -17,8 +17,8 @@ function whatsapp(string $phone, string $message, string $text = NULL, string $c
     }else{
         $dataClass = 'class="' . $class . '"';
     }
-
-    $whatsapp = '<a rel="nofollow noreferrer noopener" ' . $dataClass . ' href="https://api.whatsapp.com/send?phone=55' . $phone . '&text=' . urlencode($message) . '" target="_blank" title="' . $title . '">' . $text . '</a>';
+    
+    $whatsapp = '<a rel="nofollow noreferrer noopener" ' . $dataClass . ' href="https://api.whatsapp.com/send?phone=55' . formatPhone($phone) . '&text=' . urlencode($message) . '" target="_blank" title="' . $title . '">' . $text . '</a>';
 
     return $whatsapp;
 }
