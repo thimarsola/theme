@@ -2,7 +2,11 @@
 <!-- end of main -->
 
 <!-- footer -->
-<?php get_template_part('template-parts/footer/footer', 'footer'); ?>
+<footer class="footer">
+   <!-- developer -->
+   <?php get_template_part('template-parts/footer/footer', 'developer'); ?>
+   <!-- end of developer -->
+</footer>
 <!-- end of footer -->
 
 <?php wp_footer(); ?>
