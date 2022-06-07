@@ -31,8 +31,8 @@ require_once get_template_directory() . '/inc/Pagination.php';
 //SITEMAP SUPPORT
 require_once get_template_directory() . '/inc/Sitemap.php';
 
-//CUSTOM STHEME SUPPORT
+//CUSTOM THEME SUPPORT
 require_once get_template_directory() . '/inc/ThemeSupport.php';
 
-//CUSTOM TITLE
-require_once get_template_directory() . '/inc/Title.php';
+//DISABLE WORDPRESS FUNCTIONS
+require_once get_template_directory() . '/inc/Wordpress.php';
