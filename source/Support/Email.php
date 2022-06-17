@@ -26,11 +26,11 @@ class Email
       $this->mail->isHTML();
       $this->mail->setLanguage("br");
 
-      if ($_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["SERVER_NAME"] == "localhost") {
+      if ($_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["HTTP_HOST"] == "localhost:3000" || $_SERVER["SERVER_NAME"] == "localhost") {
          $this->mail->SMTPDebug = 4;
       }
 
-      if (!$_SERVER["HTTP_HOST"] == "localhost:8000" || !$_SERVER["SERVER_NAME"] == "localhost") {
+      if (!$_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["HTTP_HOST"] == "localhost:3000" || !$_SERVER["SERVER_NAME"] == "localhost") {
          $this->mail->SMTPAuth = true;
          $this->mail->SMTPSecure = "tls";
          //        $this->mail->SMTPSecure = "ssl";

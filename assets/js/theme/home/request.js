@@ -1,28 +1,32 @@
 // var $j = jQuery.noConflict();
 
 $(document).ready(function () {
-    const path = $(location).attr("href").split("contato/", 1).reverse().join('');
-    const file = 'wp-content/themes/industriasrc/source/Support/Sender.php';
+   const path = $(location)
+      .attr("href")
+      .split("contato/", 1)
+      .reverse()
+      .join("");
+   const file = "wp-content/themes/theme/source/Support/Sender.php";
 
-    $('#form').submit(function () {
-        $(".contact__container__row__form__content__status").removeClass("d-none");
+   $("#form").submit(function () {
+      $(".contact__form__status").removeClass("hidden");
 
-        $.ajax({
-            url: path.concat(file),
-            type: 'POST',
-            cache: false,
-            data: $('#form').serialize(),
-            success: function (data) {
-                $('.contact__container__row__form__content__status').append(data);
+      $.ajax({
+         url: path.concat(file),
+         type: "POST",
+         cache: false,
+         data: $("#form").serialize(),
+         success: function (data) {
+            $(".contact__form__status").append(data);
 
-                setTimeout(function (){
-                    $(".contact__container__row__form__content__status").addClass("d-none");
-                }, 3000);
-            },
-            error: function(){
-                $('.contact__container__row__form__content__status').append('Erro');
-            }
-        });
-        return false;
-    });
+            setTimeout(function () {
+               $(".contact__form__status").addClass("hidden");
+            }, 3000);
+         },
+         error: function () {
+            $(".contact__form__status").append("Erro");
+         },
+      });
+      return false;
+   });
 });
