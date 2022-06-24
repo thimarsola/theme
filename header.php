@@ -92,7 +92,7 @@
       <!-- End Google Tag Manager (noscript) -->
    <?php endif; ?>
 
-   <h1 class="d-none">
+   <h1 class="hidden">
       <?php
       if (is_home() || is_404()) {
          echo SITE['name'];
