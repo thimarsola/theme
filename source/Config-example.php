@@ -25,9 +25,9 @@ define("SITE", [
 /**
  * SITE MINIFY
  */
-if ($_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["SERVER_NAME"] == "localhost") {
-   require __DIR__ . '/Minifier.php';
-}
+// if ($_SERVER["HTTP_HOST"] == "localhost:8000" || $_SERVER["SERVER_NAME"] == "localhost") {
+//    require __DIR__ . '/Minifier.php';
+// }
 
 /**
  * SOCIAL CONFIG

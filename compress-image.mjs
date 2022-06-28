@@ -16,13 +16,13 @@ compress_images(
    {
       jpg: {
          engine: "mozjpeg",
-         command: ["-quality", "60"],
+         command: ["-quality", "80"],
       },
    },
    {
       png: {
          engine: "pngquant",
-         command: ["--quality=20-50", "-o"],
+         command: ["--quality=90-100", "-o"],
       },
    },
    {
