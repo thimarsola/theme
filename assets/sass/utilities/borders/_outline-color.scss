@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+/*
+* OUTLINE COLOR
+*/
+.outline-inherit{
+   outline-color: inherit;
+}
+
+.outline-current{
+   outline-color: currentColor;
+}
+
+.outline-transparent{
+   outline-color: transparent;
+}
+
+.outline-black{
+   outline-color: rgb(0 0 0);
+}
+
+.outline-white{
+   outline-color: rgb(255 255 255);
+}
+
+@each $color, $shade in $colors {
+   @each $prop, $value in $shade {
+      .outline-#{$color}-#{$prop} {
+         outline-color: var(--clr-#{$color}-#{$prop}) !important;
+      }
+   }
+}

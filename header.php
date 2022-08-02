@@ -59,6 +59,11 @@
    <meta name="twitter:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>" />
    <meta name="twitter:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" />
 
+   <!-- FONTS -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+
    <?php if (SITE['gtm'] != null) : ?>
 
       <!-- Google Tag Manager -->

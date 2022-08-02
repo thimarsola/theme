@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+/*
+* DIVIDE COLOR
+*/
+.divide-inherit{
+   border-color: inherit;
+}
+
+.divide-current{
+   border-color: currentColor;
+}
+
+.divide-transparent{
+   border-color: transparent;
+}
+
+.divide-black{
+   border-color: rgb(0 0 0);
+}
+
+.divide-white{
+   border-color: rgb(255 255 255);
+}
+
+@each $color, $shade in $colors {
+   @each $prop, $value in $shade {
+      .divide-#{$color}-#{$prop} {
+         border-color: var(--clr-#{$color}-#{$prop}) !important;
+      }
+   }
+}

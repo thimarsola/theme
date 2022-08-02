@@ -1,28 +1,44 @@
 @use '../abstracts' as *;
 
 :root {
-  --font-base: 50%;
-  --gap: 1.5rem;
-  --text-regular: "Lato Regular", sans-serif;
-  --text-bold: "Lato Bold", sans-serif;
-  --text-black: "Lato Black", sans-serif;
-  --text-balootamma2-bold: "Baloo Tamma 2 Bold", cursive;
+   /*
+   * FONT FAMILY
+   */
+   --font-default: 'Maven Pro', sans-serif;
+   --font-reading: 'PT Serif', serif;
+   --font-highligh: 'Maven Pro', sans-serif;
 
-  @include breakpoint(md) {
-    --font-base: 62.5%;
-  }
+   /*
+   * FONT SIZE
+   */
+   --font-base: 16px;
 
-  @each $color, $shade in $colors {
-    @each $prop, $value in $shade {
-      --clr-#{$color}-#{$prop}: #{$value};
-    }
-  }
+   /*
+   * FONT STYLE
+   */
+   --italic: italic;
+   --not-italic: normal;
 
-  @each $screen-size, $property in $type-scale {
-    --fs-#{$screen-size}: #{$property};
-  }
+   /*
+   * FONT WEIGHT
+   */
+   --font-normal: 400;
+   --font-medium: 500;
+   --font-bold: 700;
 
-  @each $screen-size, $property in $container-max-widths {
-    --#{$screen-size}: #{$property};
-  }
+   /*
+   * COLORS
+   */
+   @each $color, $shade in $colors {
+      @each $prop, $value in $shade {
+         --clr-#{$color}-#{$prop}: #{$value};
+      }
+   }
+
+   /*
+   * SCREEN SIZES
+   */
+   @each $screen-size, $property in $container {
+      --#{$screen-size}: #{$property};
+   }
 }

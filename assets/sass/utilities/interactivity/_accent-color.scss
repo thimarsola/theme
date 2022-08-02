@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+/*
+* ACCENT COLOR
+*/
+.accent-inherit{
+   accent-color: inherit;
+}
+
+.accent-current{
+   accent-color: currentColor;
+}
+
+.accent-transparent{
+   accent-color: transparent;
+}
+
+.accent-black{
+   accent-color: rgb(0 0 0);
+}
+
+.accent-white{
+   accent-color: rgb(255 255 255);
+}
+
+@each $color, $shade in $colors {
+   @each $prop, $value in $shade {
+      .accent-#{$color}-#{$prop} {
+         accent-color: var(--clr-#{$color}-#{$prop}) !important;
+      }
+   }
+}

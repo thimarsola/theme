@@ -1,0 +1,12 @@
+@use "../../abstracts" as *;
+
+/*
+* SHRINK
+*/
+.shrink{
+   flex-shrink: 1;
+}
+
+.shrink-0{
+   flex-shrink: 0;
+}

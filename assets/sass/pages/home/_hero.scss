@@ -1,2 +1,168 @@
 @use "../../abstracts" as *;
 
+.hero{
+    position: relative;
+    height: 31rem;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 5rem);
+        background: var(--clr-neutral-100);
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 62.5%;
+        height: 100%;
+        background:{
+            image: url("../images/background-home.jpg");
+            size: cover;
+            position: left center;
+        }
+    }
+
+    &__header{
+        position: relative;
+        max-width: 26rem;
+        width: 100%;
+        height: calc(31rem - 5rem);
+        z-index: 1;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 2.5rem;
+            left: -3rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            border: 2px solid var(--clr-primary-500);
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -3rem;
+            left: -3rem;
+            width: 9.75rem;
+            height: 6rem;
+            background:{
+                image: url("../images/dots.svg");
+                size: cover;
+                position: center;
+            }
+        }
+    }
+
+    //breakpoint 1680px
+    @include bp(1680px){
+        &::after{
+            width: 64.5%;
+        }
+    }
+
+    //breakpoint 1600px
+    @include bp(1600px){
+        &::after{
+            width: 65.2%;
+        }
+    }
+
+    //breakpoint 1536px
+    @include bp(1536px){
+        &::after{
+            width: 65.5%;
+        }
+    }
+
+    //breakpoint 1440px
+    @include bp(1440px){
+        &::after{
+            width: 67%;
+        }
+    }
+
+    //breakpoint 1336px
+    @include bp(1336px){
+        &::after{
+            width: 68%;
+        }
+    }
+
+    //breakpoint 1024px
+    @include bp(1024px){
+        &::after{
+            width: 61%;
+        }
+    }
+
+    //breakpoint 800px
+    @include bp(800px){
+        &::after{
+            width: 50%;
+        }
+    }
+
+    //breakpoint 720px
+    @include bp(720px){
+        &::after{
+            width: 41%;
+            transform: scaleX(-1);
+            background-position: 45% center;
+        }
+    }
+
+    //breakpoint 414px
+    @include bp(414px){
+        height: fit-content;
+        padding-bottom: 4rem;
+
+        &::after{
+            width: 32%;
+            background: linear-gradient(transparent, var(--clr-neutral-200));
+        }
+
+        &__header{
+            padding: 7.5rem 0;
+            height: fit-content;
+            
+            &::before{
+                left: 0;
+            }
+            
+            &::after{
+                left: initial;
+                right: 0;
+            }
+
+            h2{
+                text-align: left;
+                
+                span{
+                    font-size: 3.25rem;
+                }
+            }
+        }
+    }
+
+    //breakpoint 375px
+    @include bp(375px){
+        &::after{
+            width: 25%;
+        }
+    }
+
+    //breakpoint 360px
+    @include bp(360px){
+        &::after{
+            width: 21%;
+        }
+    }
+}

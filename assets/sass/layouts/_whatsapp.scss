@@ -1,35 +1,28 @@
 @use '../abstracts' as *;
+@use "../utilities/transitions-animation/transition-property";
+@use "../utilities/transitions-animation/transition-duration";
+@use "../utilities/transitions-animation/transition-timing-function";
 
 .whatsapp {
-    position: fixed;
     right: 2rem;
     bottom: 2rem;
-    z-index: 100;
+    transform: scale(1);
+    @extend .transition;
+    @extend .duration-700;
+    @extend .ease-in-out;
 
+    &:hover{
+        transform: scale(.95);
+    }
+    
     a {
-        margin: 0;
-        padding: 0;
-        width: var(--fs-900);
-        height: var(--fs-900);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: var(--fs-500);
-        color: white;
-        line-height: 1;
-        border-radius: 50%;
-        background: var(--clr-whatsapp-500);
-        transform: scale(1);
-        @include transition(transform);
-
-        &:hover,
-        &:focus {
-            transform: scale(.95);
-            @include transition(transform);
-        }
-
-        i {
-            line-height: inherit;
-        }
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    
+    //breakpoint 800px
+    @include bp(800px){
+        right: 1rem;
+        bottom: 1rem;
     }
 }

@@ -16,7 +16,7 @@ compress_images(
    {
       jpg: {
          engine: "mozjpeg",
-         command: ["-quality", "80"],
+         command: ["-quality", "90"],
       },
    },
    {

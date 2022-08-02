@@ -1,47 +1,54 @@
 * {
-    font-family: var(--text-regular) !important;
+   font-family: var(--font-default);
+   font-style: var(--not-italic);
 }
 
 html {
-    font-size: var(--font-base) !important;
-    color: var(--clr-neutral-500) !important;
+   font-size: var(--font-base);
+   font-weight: var(--font-normal);
+   color: var(--clr-neutral-300);
 }
 
 body {
-    font-size: var(--fs-200);
+   font-size: var(--fs-200);
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: var(--text-balootamma2-bold) !important;
-    font-size: inherit;
-    line-height: 1.1;
+   font-family: var(--font-highligh);
+   font-size: inherit;
+   font-weight: var(--font-bold);
+   line-height: 1.1;
 }
 
 strong,
 b {
-    font-family: var(--text-bold) !important;
+   font-weight: var(--font-bold);
+}
+
+em{
+   font-style: var(--italic);
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit !important;
+   text-decoration: none;
+   color: inherit;
+   font: inherit;
 
-    &:hover,
-    &:focus {
-        text-decoration: none;
-    }
+   &:hover,
+   &:focus {
+      text-decoration: none;
+   }
 }
 
 address {
-    font: inherit;
+   font: inherit;
 }
 
 input,
 textarea{
-    font-family: var(--text-regular) !important;
-    color: var(--clr-neutral-500) !important;
+   font: inherit;
+   color: var(--clr-neutral-300);
 }

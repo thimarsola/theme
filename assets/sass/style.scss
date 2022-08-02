@@ -1,8 +1,7 @@
-@use 'fonts/font-face';
-@use "fonts/icons/font_icon";
-@use 'base';
-@use 'utilities';
-@use 'components';
-@use 'layouts';
-@use 'vendors/magnific-popup.css';
-@use 'pages/home/index';
+@use "fonts/font-face";
+@use "base";
+@use "utilities";
+@use "components";
+@use "layouts";
+@use "pages/home/index";
+@import "~remixicon/fonts/remixicon.css";

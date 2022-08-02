@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+/*
+* BACKGROUND COLOR
+*/
+.bg-inherit{
+   background-color: inherit;
+}
+
+.bg-current{
+   background-color: currentColor;
+}
+
+.bg-transparent{
+   background-color: transparent;
+}
+
+.bg-black{
+   background-color: rgb(0 0 0);
+}
+
+.bg-white{
+   background-color: rgb(255 255 255);
+}
+
+@each $color, $shade in $colors {
+   @each $prop, $value in $shade {
+      .bg-#{$color}-#{$prop} {
+         background-color: var(--clr-#{$color}-#{$prop}) !important;
+      }
+   }
+}

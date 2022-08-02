@@ -1,0 +1,32 @@
+@use "../../abstracts" as *;
+
+/*
+* BORDER COLOR
+*/
+.border-inherit{
+   border-color: inherit;
+}
+
+.border-current{
+   border-color: currentColor;
+}
+
+.border-transparent{
+   border-color: transparent;
+}
+
+.border-black{
+   border-color: rgb(0 0 0);
+}
+
+.border-white{
+   border-color: rgb(255 255 255);
+}
+
+@each $color, $shade in $colors {
+   @each $prop, $value in $shade {
+      .border-#{$color}-#{$prop} {
+         border-color: var(--clr-#{$color}-#{$prop}) !important;
+      }
+   }
+}

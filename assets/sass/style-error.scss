@@ -1,7 +1,8 @@
 @use 'fonts/font-face';
-@use "fonts/icons/font_icon";
 @use 'base';
 @use 'utilities';
 @use 'components';
 @use 'layouts';
 @use 'pages/404/index';
+@import '~remixicon/fonts/remixicon.css';
+
