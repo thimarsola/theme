@@ -26,7 +26,7 @@ sed -i 's/package-name/'$packageName'/g' package.json composer.json
 echo ""
 printf "Digite o nome do projeto: "
 read projetName
-sed -i 's/project-name/'"$projetName"'/g' package.json README.md style.css
+sed -i 's/project-name/'"$projetName"'/g' package.json composer.json README.md style.css
 
 echo ""
 printf "Digite o nome do repositório no Github: "
