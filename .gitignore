@@ -4,3 +4,4 @@ log
 source/Config.php
 composer.phar
 .DS_Store
+package-lock.json
