@@ -1,9 +1,5 @@
-# Website Name
+# project-name
 
-This is repository for the website [Name](https://domain.com.br "Name").
+This is repository for the website [project-name](https://domain.com.br "project-name").
 
 This website was develop by [Goognet Solução Digital](https://goognet.com.br "Agência Especializada em Marketing Digital").
-
-## Layout
-
-The UI Layout can be found in the behance of [Name](https://www.behance.net/ "Name")

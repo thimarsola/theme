@@ -1,6 +1,6 @@
-node_modules/**
-vendor/**
-log/**
+node_modules
+vendor
+log
 source/Config.php
 composer.phar
 .DS_Store

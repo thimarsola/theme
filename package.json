@@ -1,55 +1,58 @@
 {
-   "name": "name",
-   "version": "1.0.0",
-   "description": "Website develop by Goognet Digital Solution Agency for the name",
-   "main": "index.php",
-   "private": true,
-   "scripts": {
-      "image:compress": "node compress-image.mjs",
-      "image:convert": "node convert-image.mjs",
-      "image": "npm-run-all --parallel image:*",
-      "watch:image": "onchange -i -k './assets/images/*' -- npm-run-all --parallel image:*",
-      "watchs": "npm-run-all --parallel watch watch:image",
-      "dev": "npm run development",
-      "development": "mix",
-      "watch": "mix watch",
-      "watch-poll": "mix watch -- --watch-options-poll=1000",
-      "hot": "mix watch --hot",
-      "prod": "npm run production",
-      "production": "mix --production"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/thimarsola/Projeto-name.git"
-   },
-   "author": "Thiago Marsola | Goognet Solução Digital",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/thimarsola/Projeto-name/issues"
-   },
-   "homepage": "https://github.com/thimarsola/Projeto-name#readme",
-   "devDependencies": {
-      "autoprefixer": "^10.4.2",
-      "browser-sync": "^2.27.10",
-      "browser-sync-webpack-plugin": "^2.3.0",
-      "compress-images": "^2.0.5",
-      "cross-env": "^7.0.3",
-      "gifsicle": "^5.2.1",
-      "imagemin": "^8.0.1",
-      "imagemin-webp": "^7.0.0",
-      "laravel-mix": "^6.0.6",
-      "npm-run-all": "^4.1.5",
-      "onchange": "^7.1.0",
-      "pngquant-bin": "^6.0.1",
-      "resolve-url-loader": "^5.0.0",
-      "sass": "^1.52.1",
-      "sass-loader": "^12.6.0"
-   },
-   "dependencies": {
-      "jquery": "^3.6.0",
-      "magnific-popup": "^1.1.0",
-      "owl.carousel": "^2.3.4",
-      "remixicon": "^2.5.0",
-      "sweetalert2": "^11.1.5"
-   }
+    "name": "project-name",
+    "version": "1.0.0",
+    "description": "Website develop by Goognet Digital Solution Agency for the project-name",
+    "main": "index.php",
+    "private": true,
+    "scripts": {
+        "image:compress": "node compress-image.mjs",
+        "image:convert": "node convert-image.mjs",
+        "image": "npm-run-all --parallel image:*",
+        "watch:image": "onchange -i -k './assets/images/*' -- npm-run-all --parallel image:*",
+        "watchs": "npm-run-all --parallel watch watch:image",
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thimarsola/repo-name.git"
+    },
+    "author": "Thiago Marsola | Goognet Solução Digital",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/thimarsola/repo-name/issues"
+    },
+    "homepage": "https://github.com/thimarsola/repo-name#readme",
+    "devDependencies": {
+        "@commitlint/cli": "^17.0.3",
+        "@commitlint/config-conventional": "^17.0.3",
+        "autoprefixer": "^10.4.2",
+        "browser-sync": "^2.27.10",
+        "browser-sync-webpack-plugin": "^2.3.0",
+        "compress-images": "^2.0.5",
+        "cross-env": "^7.0.3",
+        "gifsicle": "^5.2.1",
+        "husky": "^8.0.1",
+        "imagemin": "^8.0.1",
+        "imagemin-webp": "^7.0.0",
+        "laravel-mix": "^6.0.6",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "pngquant-bin": "^6.0.1",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.52.1",
+        "sass-loader": "^12.6.0"
+    },
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "magnific-popup": "^1.1.0",
+        "owl.carousel": "^2.3.4",
+        "remixicon": "^2.5.0",
+        "sweetalert2": "^11.1.5"
+    }
 }
