@@ -1,7 +1,0 @@
-@use '../abstracts' as *;
-
-@for $i from 1 through 4{
-    .gap-#{$i}{
-        gap: calc(var(--gap) * #{$i});
-    }
-}
