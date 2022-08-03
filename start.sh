@@ -5,29 +5,46 @@ echo ""
 echo "---------- >>> Start Project Config <<< ----------"
 echo ""
 echo "Start project ..."
+echo ""
 
 sudo rm -r .git
+
+echo ""
 git init
 npm install
 npx husky install
+chmod a+x .husky/commit-msg
+echo ""
+git flow init
+
+echo ""
 composer update
 
+echo ""
 mv source/Config-example.php source/Config.php
 
-printf "Digite o nome do projeto"
-read projectName
-sed 's/project-name/$projectName' package.json
-sed 's/project-name/$projectName' composer.json
-sed 's/project-name/$projectName' README.md
-sed 's/project-name/$projectName' style.css
+echo ""
+printf "Digite o nome do pacote: "
+read packageName
+sed -i 's/package-name/'$packageName'/g' package.json
 
-printf "Digite o nome do repositório no Github"
+echo ""
+printf "Digite o nome do projeto: "
+read projetName
+sed -i 's/project-name/'$projetName'/g' package.json
+sed -i 's/project-name/'$projetName'/g' composer.json
+sed -i 's/project-name/'$projetName'/g' README.md
+sed -i 's/project-name/'$projetName'/g' style.css
+
+echo ""
+printf "Digite o nome do repositório no Github: "
 read repoName
-sed 's/repo-name/$repoName' package.json
+sed -i 's/repo-name/'$repoName'/g' package.json
 
-printf "Digite o dominio do projeto"
+echo ""
+printf "Digite o dominio do projeto: "
 read domain
-sed 's/domain/$domain' package.json
+sed -i 's/domain/'$domain'/g' package.json
 
 echo ""
 echo "---------- >>> Finish Config <<< ----------"
