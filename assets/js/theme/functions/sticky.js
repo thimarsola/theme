@@ -2,14 +2,12 @@ $(function () {
     var $win = $(window);
 
     $win.on('scroll', function () {
-        if ($win.width() >= 769) {
-            var $navbar = $('.header__navbar');
+        var $navbar = $('.header');
 
-            if ($win.scrollTop() > 90) {
-                $navbar.addClass('fixed');
-            } else {
-                $navbar.removeClass('fixed');
-            }
+        if ($win.scrollTop() > 90) {
+            $navbar.addClass('shadow-xl');
+        } else {
+            $navbar.removeClass('shadow-xl');
         }
     });
 });
