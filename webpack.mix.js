@@ -1,5 +1,6 @@
 let mix = require("laravel-mix");
 let $ = require("jquery");
+require("laravel-mix-purgecss");
 
 mix.copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
 
@@ -22,6 +23,15 @@ mix.copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
         processCssUrls: false,
         sourcemaps: false,
     })
+
+    .purgeCss({
+        extend: {
+            enabled: true,
+            content: ["**/*.php", "**/*.js"],
+            whitelistPatterns: [/hljs/],
+        },
+    })
+
     .browserSync({
         proxy: "localhost:8000",
         files: ["dist/js/*.js", "dist/css/*.css", "dist/images/*", "**/*.php"],
