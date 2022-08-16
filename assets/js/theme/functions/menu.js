@@ -1,46 +1,29 @@
-$(function () {
-    $('.header__row__toggle').on('click', function(e){
-        $('.menu-item-has-children').find('ul').hide();
+const toggle = document.querySelector(".header__row__wrapper__toggle");
 
-        const clicks = $(this).data('clicks');
-        const header = $('.header');
+function toggleMenu(event) {
+    if (event.type === "touchstart") event.preventDefault();
+    const header = document.querySelector(".header");
+    header.classList.toggle("header--active");
 
-        if (clicks) {
-            $('body').css('overflow', 'auto');
-        } else {
-            $('body').css('overflow', 'hidden');
+    const active = header.classList.contains("header--active");
+    const toggleButton = document.querySelector(
+        ".header__row__wrapper__toggle__wrapper"
+    );
+    toggleButton.setAttribute("aria-expanded", active);
+
+    if (active === true) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "auto";
+    }
+
+    document.onclick = function (e) {
+        if (event.target.classList !== "header") {
+            header.classList.remove("header--active");
+            document.body.style.overflow = "auto";
         }
-        $(this).not('a').data("clicks", !clicks);
+    };
+}
 
-        header.toggleClass('header--active');
-
-        if(header.hasClass('header--active')){
-            $('body').css('overflow', 'hidden');
-
-            $('.menu li a[href]').not($('.menu-item-has-children > a')).click(function(){
-                header.removeClass('header--active');
-                $('body').css('overflow', 'auto');
-            });
-
-            $(document).click(function (e){
-               if(!$(e.target).closest('.header').length){
-                   header.removeClass('header--active');
-                   $('body').css('overflow', 'auto');
-               }
-            });
-        }
-        e.stopPropagation();
-    });
-
-    $('.menu-item-has-children').on('click', function(){
-        $(this).find('.sub-menu').stop().slideToggle();
-
-        $(document).click(function (e){
-            e.stopPropagation();
-
-            if($('.menu-item-has-children').has(e.target).length === 0){
-                $('.sub-menu').hide();
-            }
-        });
-    });
-});
+toggle.addEventListener("click", toggleMenu);
+toggle.addEventListener("touchstart", toggleMenu);

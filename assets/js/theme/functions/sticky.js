@@ -1,13 +1,10 @@
-$(function () {
-    var $win = $(window);
+window.onscroll = () => {
+    const header = document.querySelector(".header");
+    const sticky = header.offsetTop;
 
-    $win.on('scroll', function () {
-        var $navbar = $('.header');
-
-        if ($win.scrollTop() > 90) {
-            $navbar.addClass('shadow-xl');
-        } else {
-            $navbar.removeClass('shadow-xl');
-        }
-    });
-});
+    if (window.scrollY >= 320) {
+        header.classList.add("header--fixed");
+    } else {
+        header.classList.remove("header--fixed");
+    }
+};

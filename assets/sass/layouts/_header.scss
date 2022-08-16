@@ -1,21 +1,40 @@
 @use "../abstracts" as *;
 
-.header{
-    height: fit-content;
+.header {
     top: 0;
     left: 0;
-    
-    &__row{
-        &__wrapper{
-            &__nav{
-                &__navbar{
-                    &__content{
-                        &__menu{
-                            li{
+    width: 100%;
+    max-height: 100vh;
+    overflow: auto;
+
+    &__row {
+        &__wrapper {
+            &__toggle {
+                span {
+                    &:nth-child(1),
+                    &:nth-child(3) {
+                        transform: initial;
+                        @include transition(all);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 1;
+                        @include transition(all);
+                    }
+                }
+            }
+        }
+
+        &__content {
+            &__nav {
+                &__navbar {
+                    &__content {
+                        &__menu {
+                            li {
                                 position: relative;
-                                
-                                a{
-                                    &::before{
+
+                                a {
+                                    &::before {
                                         content: "";
                                         position: absolute;
                                         bottom: -8px;
@@ -29,8 +48,8 @@
                                         transition: all 300ms linear;
                                     }
 
-                                    &:hover{
-                                        &::before{
+                                    &:hover {
+                                        &::before {
                                             opacity: 1;
                                             transform: scaleX(1);
                                         }
@@ -42,82 +61,46 @@
                 }
             }
         }
-
-        &__toggle{
-            span{
-                &:nth-child(1), &:nth-child(3) {
-                    transform: initial;
-                    @include transition(all);
-                }
-
-                &:nth-child(2) {
-                    opacity: 1;
-                    @include transition(all);
-                }
-            }
-        }
     }
 
-    &--active{
-        @include transition(all);
+    //breakpoint 800px
+    @include bp(800px) {
+        &__row {
+            display: block;
 
-        .header__row__wrapper{
-            &__nav{
-                transform: scaleY(1);
-            }
-        }
-        
-        .header__row__toggle{
-            span{
-                @include transition(all);
+            &__wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-                &:nth-child(1) {
-                    transform-origin: center;
-                    transform: rotate(45deg) translate(8px, 8px);
-                    @include transition(all);
-                }
-
-                &:nth-child(2) {
-                    opacity: 0;
-                    @include transition(all);
-                }
-
-                &:nth-child(3) {
-                    transform-origin: center;
-                    transform: rotate(-45deg) translate(9px, -9px);
-                    @include transition(all);
-                }
-            }
-        }
-    }
-    
-    //breakpoint 768px
-    @include bp(768px){
-        &__row{
-            &__wrapper{
-                &__cta{
-                    display: none;
-                }
-
-                &__nav{
+                &__toggle {
                     display: block;
-                    position: absolute;
-                    top: 7rem;
-                    left: 0;
-                    padding: 2.5rem 1.5rem;
+                    height: 4.5rem;
+                }
+            }
+
+            &__content {
+                display: block;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition-property: max-height;
+                transition-timing-function: linear;
+                transition-duration: 300ms;
+
+                &__nav {
+                    border-top: 2px solid var(--clr-primary-500);
+                    margin-top: 2rem;
+                    padding: 2rem 0;
+                    display: block;
                     width: 100%;
-                    background: var(--clr-neutral-100);
-                    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-                    transform-origin: top;
-                    transform: scaleY(0);
-                    @include transition(transform);
-                    
-                    &__navbar{
-                        &__content{
-                            &__menu{
+
+                    &__navbar {
+                        &__content {
+                            &__menu {
                                 flex-direction: column;
-                                
-                                li{
+
+                                li {
                                     font-size: 1.125rem;
                                     color: var(--clr-neutral-400);
                                     font-weight: var(--font-medium);
@@ -126,21 +109,66 @@
                         }
                     }
                 }
-            }
-            
-            &__toggle{
-                display: block;
+
+                &__social {
+                    display: none;
+                }
             }
         }
     }
-    
+
     //breakpoint 360px
-    @include bp(360px){
-        &__row{
-            &__brand{
-                img{
-                    height: 6rem;
+    @include bp(360px) {
+        &__row {
+            &__wrapper {
+                &__brand {
+                    img {
+                        height: 5rem;
+                    }
                 }
+            }
+        }
+    }
+
+    //menu active
+    &--active {
+        .header__row__content {
+            max-height: 100vh;
+        }
+
+        .header__row__wrapper__toggle {
+            span {
+                &:nth-child(1) {
+                    transform-origin: center;
+                    transform: rotate(45deg) translate(8px, 8px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform-origin: center;
+                    transform: rotate(-45deg) translate(9px, -9px);
+                }
+            }
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        animation: translateHeader 0.8s;
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.1);
+        @include transition(all);
+
+        @keyframes translateHeader {
+            from {
+                transform: translateY(-120%);
+            }
+            to {
+                transform: translateY(0);
             }
         }
     }
