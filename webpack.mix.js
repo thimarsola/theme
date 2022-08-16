@@ -1,8 +1,9 @@
 let mix = require("laravel-mix");
-let $ = require("jquery");
 require("laravel-mix-purgecss");
 
-mix.copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
+mix
+    //ICONS
+    .copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
 
     //HOME
     .sass("assets/sass/style.scss", "dist/css")
@@ -15,8 +16,17 @@ mix.copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
         "dist/js/script-home.js"
     )
 
+    //ERROR
+    .sass("assets/sass/style-error.scss", "dist/css")
+    .js(["assets/js/theme/functions/menu.js"], "dist/js/script-error.js")
+
+    .options({
+        processCssUrls: false,
+        sourcemaps: false,
+    })
+
     .autoload({
-        jquery: ["$", "window.jQuery"],
+        jquery: ["$", "window.jQuery", "jQuery", "jquery"],
     })
 
     .options({
@@ -27,7 +37,7 @@ mix.copyDirectory("node_modules/remixicon/fonts", "dist/font/remixicon")
     .purgeCss({
         extend: {
             enabled: true,
-            content: ["**/*.php", "**/*.js"],
+            content: ["**/*.php", "**/*.js", "**/*.json"],
             whitelistPatterns: [/hljs/],
         },
     })
