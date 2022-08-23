@@ -1,89 +1,100 @@
 /**
 * Brand Colors
 */
-$primaryLight: #668eb0;
-$primaryMid: #00437B;
-$primaryDark: #00284a;
-$primaryHover: #001425;
+$primary-300: #e69f8b;
+$primary-500: #d55f3d;
+$primary-700: #803925;
+$primary-900: #401c12;
+
+$secondary-300: #e69f8b;
+$secondary-500: #d55f3d;
+$secondary-700: #803925;
+$secondary-900: #401c12;
 
 /**
 * Semantic Colors
 */
-$successLight: #02DD5B;
-$successBase: #1F8D3F;
-$successLow: #051D11;
+$success-300: #02dd5b;
+$success-500: #1f8d3f;
+$success-700: #051d11;
 
-$dangerLight: #FB5B67;
-$dangerBase: #D72936;
-$dangerLow: #2E0B11;
+$danger-300: #fb5b67;
+$danger-500: #d72936;
+$danger-700: #2e0b11;
 
-$warningLight: #F29C4A;
-$warningBase: #E87F1C;
-$warningLow: #2C1D06;
+$warning-300: #f29c4a;
+$warning-500: #e87f1c;
+$warning-700: #2c1d06;
 
-$infoLight: #1CE5BE;
-$infoBase: #077B74;
-$infoLow: #15343B;
+$info-300: #1ce5be;
+$info-500: #077b74;
+$info-700: #15343b;
 
 /**
 * Neutral Colors
 */
-$neutral-100: #EBEBEF;
-$neutral-200: #CFCFD3;
-$neutral-300: #94939E;
-$neutral-400: #7F8092;
-$neutral-500: #504F5B;
+$neutral-100: #ebebef;
+$neutral-200: #cfcfd3;
+$neutral-300: #94939e;
+$neutral-400: #7f8092;
+$neutral-500: #504f5b;
 $neutral-600: #333337;
-$neutral-700: #2A2A2E;
+$neutral-700: #2a2a2e;
 $neutral-800: #222224;
 $neutral-900: #151517;
-$neutral-950: #0B0B0B;
+$neutral-950: #0b0b0b;
 
 /**
-* Whatsapp Color 
+* Whatsapp Color
 */
-$whatsapp: #2CD366;
+$whatsapp: #2cd366;
 
 $colors: (
-   "primary": (
-      300: $primaryLight,
-      500: $primaryMid,
-      700: $primaryDark,
-      900: $primaryHover,
-   ),
-   "success": (
-      300: $successLight,
-      500: $successBase,
-      700: $successLow,
-   ),
-   "danger": (
-      300: $dangerLight,
-      500: $dangerBase,
-      700: $dangerLow,
-   ),
-   "warning": (
-      300: $warningLight,
-      500: $warningBase,
-      700: $warningLow,
-   ),
-   "info": (
-      300: $infoLight,
-      500: $infoBase,
-      700: $infoLow,
-   ),
-   "neutral": (
-      100: $neutral-100,
-      200: $neutral-200,
-      300: $neutral-300,
-      400: $neutral-400,
-      500: $neutral-500,
-      600: $neutral-600,
-      700: $neutral-700,
-      800: $neutral-800,
-      900: $neutral-900,
-      950: $neutral-950,
-   ),
-   "whatsapp": (
-      "500": $whatsapp,
-   )
+    "primary": (
+        300: $primary-300,
+        500: $primary-500,
+        700: $primary-700,
+        900: $primary-900,
+    ),
+    "secondary": (
+        300: $secondary-300,
+        500: $secondary-500,
+        700: $secondary-700,
+        900: $secondary-900,
+    ),
+    "success": (
+        300: $success-300,
+        500: $success-500,
+        700: $success-700,
+    ),
+    "danger": (
+        300: $danger-300,
+        500: $danger-500,
+        700: $danger-700,
+    ),
+    "warning": (
+        300: $warning-300,
+        500: $warning-500,
+        700: $warning-700,
+    ),
+    "info": (
+        300: $info-300,
+        500: $info-500,
+        700: $info-700,
+    ),
+    "neutral": (
+        100: $neutral-100,
+        200: $neutral-200,
+        300: $neutral-300,
+        400: $neutral-400,
+        500: $neutral-500,
+        600: $neutral-600,
+        700: $neutral-700,
+        800: $neutral-800,
+        900: $neutral-900,
+        950: $neutral-950,
+    ),
+    "whatsapp": (
+        "500": $whatsapp,
+    ),
 );

@@ -1,28 +1,28 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 @use "../utilities/transitions-animation/transition-property";
 @use "../utilities/transitions-animation/transition-duration";
 @use "../utilities/transitions-animation/transition-timing-function";
 
 .whatsapp {
-    right: 2rem;
-    bottom: 2rem;
+    right: toRem(32);
+    bottom: toRem(32);
     transform: scale(1);
     @extend .transition;
     @extend .duration-700;
     @extend .ease-in-out;
 
-    &:hover{
-        transform: scale(.95);
+    &:hover {
+        transform: scale(0.95);
     }
-    
+
     a {
-        width: 4.5rem;
-        height: 4.5rem;
+        width: toRem(72);
+        height: toRem(72);
     }
-    
+
     //breakpoint 800px
-    @include bp(800px){
-        right: 1rem;
-        bottom: 1rem;
+    @include bp(800px) {
+        right: toRem(16);
+        bottom: toRem(16);
     }
 }

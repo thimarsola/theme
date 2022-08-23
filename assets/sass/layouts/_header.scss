@@ -4,6 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    min-height: toRem(120);
     max-height: 100vh;
     overflow: auto;
 
@@ -75,7 +76,7 @@
 
                 &__toggle {
                     display: block;
-                    height: 4.5rem;
+                    height: toRem(72);
                 }
             }
 
@@ -90,8 +91,8 @@
 
                 &__nav {
                     border-top: 2px solid var(--clr-primary-500);
-                    margin-top: 2rem;
-                    padding: 2rem 0;
+                    margin-top: toRem(32);
+                    padding: toRem(32) 0;
                     display: block;
                     width: 100%;
 
@@ -101,17 +102,13 @@
                                 flex-direction: column;
 
                                 li {
-                                    font-size: 1.125rem;
+                                    font-size: toRem(18);
                                     color: var(--clr-neutral-400);
                                     font-weight: var(--font-medium);
                                 }
                             }
                         }
                     }
-                }
-
-                &__social {
-                    display: none;
                 }
             }
         }
@@ -123,7 +120,7 @@
             &__wrapper {
                 &__brand {
                     img {
-                        height: 5rem;
+                        height: toRem(80);
                     }
                 }
             }

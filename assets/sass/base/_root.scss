@@ -1,44 +1,50 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 :root {
-   /*
+    /*
    * FONT FAMILY
    */
-   --font-default: 'Maven Pro', sans-serif;
-   --font-reading: 'PT Serif', serif;
-   --font-highligh: 'Maven Pro', sans-serif;
+    --font-default: "Montserrat", sans-serif;
+    --font-reading: "PT Serif", serif;
+    --font-highlight: "Montserrat", sans-serif;
 
-   /*
+    /*
    * FONT SIZE
    */
-   --font-base: 16px;
+    --font-base: 16px;
 
-   /*
+    /*
    * FONT STYLE
    */
-   --italic: italic;
-   --not-italic: normal;
+    --italic: italic;
+    --not-italic: normal;
 
-   /*
+    /*
    * FONT WEIGHT
    */
-   --font-normal: 400;
-   --font-medium: 500;
-   --font-bold: 700;
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
 
-   /*
+    /*
    * COLORS
    */
-   @each $color, $shade in $colors {
-      @each $prop, $value in $shade {
-         --clr-#{$color}-#{$prop}: #{$value};
-      }
-   }
+    @each $color, $shade in $colors {
+        @each $prop, $value in $shade {
+            --clr-#{$color}-#{$prop}: #{$value};
+        }
+    }
 
-   /*
+    /*
    * SCREEN SIZES
    */
-   @each $screen-size, $property in $container {
-      --#{$screen-size}: #{$property};
-   }
+    @each $screen-size, $property in $container {
+        --#{$screen-size}: #{$property};
+    }
 }

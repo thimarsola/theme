@@ -1,37 +1,37 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
-.pagination__nav{
-    &__list{
+.pagination__nav {
+    &__list {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: .5rem;
+        gap: toRem(8);
         flex-direction: row;
 
-        &__item{
-            width: 3rem;
-            height: 3rem;
-            font-size: 1rem;
-            line-height: 1!important;
+        &__item {
+            width: toRem(48);
+            height: toRem(48);
+            font-size: toRem(16);
+            line-height: 1 !important;
             background: transparent;
             border-radius: 3px;
             @include transition(all);
 
-            &:hover{
+            &:hover {
                 background: var(--clr-primary-500);
                 color: #fff;
             }
 
-            &__link{
+            &__link {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid rgba(#000, .15);
+                border: 1px solid rgba(#000, 0.15);
                 border-radius: inherit;
 
-                &--active{
+                &--active {
                     color: #fff;
                     border-radius: 3px;
                     border: 1px solid var(--clr-primary-500);

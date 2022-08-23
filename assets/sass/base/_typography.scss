@@ -1,54 +1,55 @@
 * {
-   font-family: var(--font-default);
-   font-style: var(--not-italic);
+    font-family: var(--font-default);
+    font-style: var(--not-italic);
 }
 
 html {
-   font-size: var(--font-base);
-   font-weight: var(--font-normal);
-   color: var(--clr-neutral-300);
+    font-size: var(--font-base);
+    font-weight: var(--font-normal);
+    color: var(--clr-neutral-400);
 }
 
 body {
-   font-size: var(--fs-200);
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
 }
 
 h1,
 h2,
 h3,
 h4 {
-   font-family: var(--font-highligh);
-   font-size: inherit;
-   font-weight: var(--font-bold);
-   line-height: 1.1;
+    font-family: var(--font-highlight);
+    font-size: inherit;
+    font-weight: var(--font-medium);
+    line-height: 1.1;
 }
 
 strong,
 b {
-   font-weight: var(--font-bold);
+    font-weight: var(--font-bold);
 }
 
-em{
-   font-style: var(--italic);
+em {
+    font-style: var(--italic);
 }
 
 a {
-   text-decoration: none;
-   color: inherit;
-   font: inherit;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
 
-   &:hover,
-   &:focus {
-      text-decoration: none;
-   }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
 }
 
 address {
-   font: inherit;
+    font: inherit;
 }
 
 input,
-textarea{
-   font: inherit;
-   color: var(--clr-neutral-300);
+textarea {
+    font: inherit;
+    color: var(--clr-neutral-300);
 }

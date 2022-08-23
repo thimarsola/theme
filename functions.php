@@ -7,6 +7,9 @@ require_once get_template_directory() . '/inc/Format.php';
 //CREATE A WHATSAPP ANCHOR
 require_once get_template_directory() . '/inc/Whatsapp.php';
 
+//META TAG DESCRIPTION
+require_once get_template_directory() . '/inc/Description.php';
+
 //PATH URL IMAGE
 require_once get_template_directory() . '/inc/Image.php';
 
