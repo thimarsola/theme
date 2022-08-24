@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 * {
     font-family: var(--font-default);
     font-style: var(--not-italic);

@@ -3,30 +3,30 @@
 /*
 * TEXT COLOR
 */
-.text-inherit{
-   color: inherit;
+.text-inherit {
+    color: inherit;
 }
 
-.text-current{
-   color: currentColor;
+.text-current {
+    color: currentColor;
 }
 
-.text-transparent{
-   color: transparent;
+.text-transparent {
+    color: transparent;
 }
 
-.text-black{
-   color: 000000;
+.text-black {
+    color: #000000;
 }
 
-.text-white{
-   color: #ffffff;
+.text-white {
+    color: #ffffff;
 }
 
 @each $color, $shade in $colors {
-   @each $prop, $value in $shade {
-      .text-#{$color}-#{$prop} {
-         color: var(--clr-#{$color}-#{$prop}) !important;
-      }
-   }
+    @each $prop, $value in $shade {
+        .text-#{$color}-#{$prop} {
+            color: var(--clr-#{$color}-#{$prop}) !important;
+        }
+    }
 }

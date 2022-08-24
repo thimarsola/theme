@@ -3,30 +3,30 @@
 /*
 * TEXT DECORATION COLOR
 */
-.decoration-inherit{
-   text-decoration-color: inherit;
+.decoration-inherit {
+    text-decoration-color: inherit;
 }
 
-.decoration-current{
-   text-decoration-color: currentColor;
+.decoration-current {
+    text-decoration-color: currentColor;
 }
 
-.decoration-transparent{
-   text-decoration-color: transparent;
+.decoration-transparent {
+    text-decoration-color: transparent;
 }
 
-.decoration-black{
-   text-decoration-color: 000000;
+.decoration-black {
+    text-decoration-color: #000000;
 }
 
-.decoration-white{
-   text-decoration-color: #ffffff;
+.decoration-white {
+    text-decoration-color: #ffffff;
 }
 
 @each $color, $shade in $colors {
-   @each $prop, $value in $shade {
-      .decoration-#{$color}-#{$prop} {
-         text-decoration-color: var(--clr-#{$color}-#{$prop}) !important;
-      }
-   }
+    @each $prop, $value in $shade {
+        .decoration-#{$color}-#{$prop} {
+            text-decoration-color: var(--clr-#{$color}-#{$prop}) !important;
+        }
+    }
 }
