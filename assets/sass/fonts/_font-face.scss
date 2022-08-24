@@ -1,11 +1,16 @@
+//Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif&display=swap");
+
 //Remix Icon
 @font-face {
-   font-family: "remixicon";
-   src: url('../font/remixicon/remixicon.eot'); /* IE9*/
-   src: url('../font/remixicon/remixicon.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
-   url("../font/remixicon/remixicon.woff2") format("woff2"),
-   url("../font/remixicon/remixicon.woff") format("woff"),
-   url('../font/remixicon/remixicon.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-   url('../font/remixicon/remixicon.svg') format('svg'); /* iOS 4.1- */
-   font-display: swap;
+    font-family: "remixicon";
+    src: url("../font/remixicon/remixicon.eot"); /* IE9*/
+    src: url("../font/remixicon/remixicon.eot#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */ url("../font/remixicon/remixicon.woff2") format("woff2"),
+        url("../font/remixicon/remixicon.woff") format("woff"),
+        url("../font/remixicon/remixicon.ttf") format("truetype"),
+        /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url("../font/remixicon/remixicon.svg") format("svg"); /* iOS 4.1- */
+    font-display: swap;
 }
