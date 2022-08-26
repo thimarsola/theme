@@ -5,7 +5,9 @@
     <meta charset="utf-8">
 
     <!--CANONICAL-->
-    <link rel="canonical" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" />
+    <?php if (!is_singular('projeto')) : ?>
+        <link rel="canonical" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" />
+    <?php endif; ?>
     <base href="<?= get_home_url(); ?>">
     <link rel="alternate" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" hreflang="x-default" />
     <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
@@ -44,13 +46,17 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
     <meta property="og:description" content="<?= description(); ?>">
-    <meta property="og:site_name" content="<?= SITE["name"] ?>"> <?php wp_head(); ?>
+    <meta property="og:site_name" content="<?= SITE["name"] ?>">
+
+    <?php wp_head(); ?>
 
     <!-- SCHEMA.ORG -->
     <meta itemprop="name" content="<?= SITE["name"] ?>">
     <meta itemprop="description" content="<?= description(); ?>">
     <meta itemprop="image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>" />
     <meta itemprop="url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
+    <meta itemprop="author" content="<?= DEV['name']; ?>" />
+    <meta itemprop="headline" content="<?= (is_home() || is_404() || is_search() ? SITE['name'] : (is_category() ? single_cat_title() . " - " . SITE["name"] : get_the_title() . " - " . SITE["name"])); ?>">
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />

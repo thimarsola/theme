@@ -12,7 +12,7 @@
             width: toRem(48);
             height: toRem(48);
             font-size: toRem(16);
-            line-height: 1 !important;
+            line-height: 1.1 !important;
             background: transparent;
             border-radius: 3px;
             @include transition(all);
@@ -20,6 +20,7 @@
             &:hover {
                 background: var(--clr-primary-500);
                 color: #fff;
+                border-color: var(--clr-primary-500);
             }
 
             &__link {
@@ -28,7 +29,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border: 1px solid rgba(#000, 0.15);
+                border: 1px solid var(--clr-neutral-500);
                 border-radius: inherit;
 
                 &--active {

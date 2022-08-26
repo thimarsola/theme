@@ -1,9 +1,15 @@
 var swiper = new Swiper(".slide", {
-    slidesPerView: 3,
+    slidesPerView: "auto",
     spaceBetween: 32,
+    autoHeight: true,
     loop: "true",
-    fade: "true",
-    grabCursos: "true",
+    loopFillGroupWithBlank: true,
+    effect: "fade",
+    grabCursor: "true",
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

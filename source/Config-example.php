@@ -53,13 +53,13 @@ define("CONTACT", [
         "message" => "",
     ],
     "phone" => [
-        "01" => "",
+        "",
     ],
     "mail" => "",
     "address" => "",
     "addressLink" => "",
     "instagram" => "",
     "facebook" => "",
-    "youtube" => "",
-    "linkedin" => ""
+    "youtube" => null,
+    "linkedin" => null
 ]);
