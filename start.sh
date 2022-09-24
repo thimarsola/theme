@@ -47,7 +47,7 @@ chmod a+x .husky/commit-msg
 echo ""
 printf "Digite o dominio do projeto: "
 read domain
-sed -i 's/domain/'$domain'/g' style.css
+sed -i 's/domain/'$domain'/g' style.css README.md
 
 echo ""
 echo "---------- >>> Finish Config <<< ----------"
