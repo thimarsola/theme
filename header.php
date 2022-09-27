@@ -6,23 +6,23 @@
 
     <!--CANONICAL-->
     <?php if (!is_singular('projeto')) : ?>
-        <link rel="canonical" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" />
+        <link rel="canonical" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
     <?php endif; ?>
     <base href="<?= get_home_url(); ?>">
-    <link rel="alternate" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" hreflang="x-default" />
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+    <link rel="alternate" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" hreflang="x-default">
 
     <title><?= (is_home() || is_404() || is_search() ? SITE['name'] : (is_category() ? single_cat_title() . " - " . SITE["name"] : get_the_title() . " - " . SITE["name"])); ?></title>
 
-    <meta name="description" content="<?= description(); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="publisher" content="<?= DEV['name']; ?>" />
+    <meta name="description" content="<?= description(); ?>">
+    <meta name="publisher" content="<?= DEV['name']; ?>">
 
     <!-- REGION -->
-    <meta name="geo.region" content="<?= REGION["region"]; ?>" />
-    <meta name="geo.placename" content="<?= REGION["placename"]; ?>" />
-    <meta name="geo.position" content="<?= REGION["position"]; ?>" />
-    <meta name="ICBM" content="<?= REGION["icbm"]; ?>" />
+    <meta name="geo.region" content="<?= REGION["region"]; ?>">
+    <meta name="geo.placename" content="<?= REGION["placename"]; ?>">
+    <meta name="geo.position" content="<?= REGION["position"]; ?>">
+    <meta name="ICBM" content="<?= REGION["icbm"]; ?>">
 
     <!-- ROBOTS -->
     <meta name="robots" content="index, follow">
@@ -31,15 +31,15 @@
     <meta name="revisit-after" content="7 days">
 
     <meta name="author" content="<?= SITE["name"]; ?> - <?= SITE["domain"]; ?>">
-    <link rel="shortcut icon" href="<?= image('favicon.svg', 'svg'); ?>">
+    <link rel="shortcut icon" href="<?= image('favicon.svg', 'svg'); ?>" type="image/x-icon">
     <link rel="apple-touch-icon" href="<?= image('favicon.svg', 'svg'); ?>">
     <meta name="theme-color" content="#ffffff">
 
     <!-- OPEN GRAPH -->
-    <meta property="og:locale" content="<?= SITE["locale"]; ?>" />
+    <meta property="og:locale" content="<?= SITE["locale"]; ?>">
     <meta property="og:region" content="Brasil">
     <meta property="og:title" content="<?= SITE["name"] ?>">
-    <meta property="og:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>" />
+    <meta property="og:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="700">
     <meta property="og:image:height" content="500">
@@ -48,23 +48,29 @@
     <meta property="og:description" content="<?= description(); ?>">
     <meta property="og:site_name" content="<?= SITE["name"] ?>">
 
-    <?php wp_head(); ?>
-
     <!-- SCHEMA.ORG -->
     <meta itemprop="name" content="<?= SITE["name"] ?>">
     <meta itemprop="description" content="<?= description(); ?>">
-    <meta itemprop="image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>" />
+    <meta itemprop="image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
     <meta itemprop="url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
-    <meta itemprop="author" content="<?= DEV['name']; ?>" />
+    <meta itemprop="author" content="<?= DEV['name']; ?>">
     <meta itemprop="headline" content="<?= (is_home() || is_404() || is_search() ? SITE['name'] : (is_category() ? single_cat_title() . " - " . SITE["name"] : get_the_title() . " - " . SITE["name"])); ?>">
 
     <!-- TWITTER -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:domain" content="<?= SITE['domain']; ?>" />
-    <meta name="twitter:title" content="<?= SITE["name"] ?>" />
-    <meta name="twitter:description" content="<?= description(); ?>" />
-    <meta name="twitter:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>" />
-    <meta name="twitter:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="<?= SITE['domain']; ?>">
+    <meta name="twitter:title" content="<?= SITE["name"] ?>">
+    <meta name="twitter:description" content="<?= description(); ?>">
+    <meta name="twitter:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
+    <meta name="twitter:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- standard -->
+    <?php wp_head(); ?>
 
     <?php if (SITE['gtm'] != null) : ?>
 
