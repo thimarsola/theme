@@ -31,8 +31,7 @@ function picture(string $name, string $alt, string $class = null, string $extens
     return '
         <picture>
             <source srcset="'. image($name) . '.webp" type="image/webp">
-            <img class="' . $class . '" src="'. image($name) . '.' . $extension . '" alt="' . $alt .'" title="' . $alt
-        .'" loading="lazy">
+            <img class="' . $class . '" src="'. image($name) . '.' . $extension . '" alt="' . $alt .'" loading="lazy">
         </picture>
         ';
 }
