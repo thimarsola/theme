@@ -78,5 +78,7 @@ function html5_slash_fixer($buffer)
 
 function html5_slash_fixer_flush()
 {
-    ob_end_flush();
+   if (ob_get_contents()) {
+      ob_end_clean();
+   }
 }
