@@ -38,7 +38,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin git@github.com:Goognet/$repoName.git
+git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
 git flow init
 npx husky install
