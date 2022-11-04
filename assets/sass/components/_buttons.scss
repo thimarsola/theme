@@ -4,7 +4,7 @@
     padding: toRem(16) toRem(40);
     display: inline-block !important;
     font: {
-        family: var(--font-bold);
+        weight: var(--font-bold);
         size: toRem(16);
     }
     cursor: pointer;
