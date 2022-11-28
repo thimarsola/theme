@@ -5,9 +5,6 @@
     <meta charset="utf-8">
 
     <!--CANONICAL-->
-    <?php if (!is_singular('projeto')) : ?>
-        <link rel="canonical" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
-    <?php endif; ?>
     <base href="<?= get_home_url(); ?>">
     <link rel="alternate" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" hreflang="x-default">
 

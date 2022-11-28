@@ -18,14 +18,12 @@
 
     @include breakpoint(lg) {
         max-width: var(--lg);
-        padding-left: 2rem; /* 32px */
-        padding-right: 2rem; /* 32px */
     }
 
     @include breakpoint(xl) {
         max-width: var(--xl);
-        padding-left: 2.5rem; /* 40px */
-        padding-right: 2.5rem; /* 40px */
+        padding-left: 2rem; /* 32px */
+        padding-right: 2rem; /* 32px */
     }
 
     //@include breakpoint(2xl) {
