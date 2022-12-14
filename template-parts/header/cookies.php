@@ -20,7 +20,7 @@
 
         <!-- button -->
         <div class="cookies__wrapper__button">
-            <button class="cookies__wrapper__button__accept btn-secondary rounded" aria-label="Aceitar cookies">Continuar</button>
+            <button class="cookies__wrapper__button__accept btn-primary rounded" aria-label="Aceitar cookies">Continuar</button>
         </div>
         <!-- end of button -->
     </div>
