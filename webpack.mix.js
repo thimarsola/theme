@@ -9,7 +9,7 @@ mix
     .sass("assets/sass/style.scss", "dist/css")
     .js(
         [
-            "assets/js/vendors/jquery.js",
+            "assets/js/theme/functions/cookies.js",
             "assets/js/theme/functions/menu.js",
             "assets/js/theme/functions/sticky.js",
         ],
