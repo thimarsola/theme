@@ -25,9 +25,6 @@ mix
         sourcemaps: false,
     })
 
-    .autoload({
-        jquery: ["$", "window.jQuery", "jQuery", "jquery"],
-    })
 
     .options({
         processCssUrls: false,

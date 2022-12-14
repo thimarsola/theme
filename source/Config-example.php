@@ -14,7 +14,6 @@ define("DEV", [
  */
 define("SITE", [
     "name" => "name",
-    "desc" => "desc",
     "domain" => "domain.com.br",
     "locale" => "pt_BR",
     "lang" => "pt-BR",
@@ -40,8 +39,8 @@ define("MAIL", [
 define("REGION", [
     "region" => "BR-SP",
     "placename" => "S&atilde;o Caetano do Sul",
-    "position" => "-23.632206;-46.582405",
-    "icbm" => "-23.632206, -46.582405"
+    "lat" => "-23.632206",
+    "long" => "-46.582405"
 ]);
 
 /**

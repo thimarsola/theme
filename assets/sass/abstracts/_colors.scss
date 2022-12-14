@@ -4,12 +4,10 @@
 $primary-300: #e69f8b;
 $primary-500: #d55f3d;
 $primary-700: #803925;
-$primary-900: #401c12;
 
 $secondary-300: #e69f8b;
 $secondary-500: #d55f3d;
 $secondary-700: #803925;
-$secondary-900: #401c12;
 
 /**
 * Semantic Colors
@@ -53,14 +51,12 @@ $colors: (
     "primary": (
         300: $primary-300,
         500: $primary-500,
-        700: $primary-700,
-        900: $primary-900,
+        700: $primary-700
     ),
     "secondary": (
         300: $secondary-300,
         500: $secondary-500,
-        700: $secondary-700,
-        900: $secondary-900,
+        700: $secondary-700
     ),
     "success": (
         300: $success-300,

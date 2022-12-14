@@ -1,3 +1,26 @@
+<?php
+// return page title
+$title = null;
+if (is_home() || is_404() || is_search()) {
+    $title = SITE['name'];
+} elseif (is_category()) {
+    $title = single_cat_title('', false) . " - " . SITE["name"];
+} elseif (is_tax()) {
+    $title = single_term_title('', false) . " - " . SITE["name"];
+} else {
+    $title = get_the_title() . " - " . SITE["name"];
+}
+
+//return url page
+if (is_home() || is_404() || is_search()) {
+    $url = get_home_url();
+} elseif (is_tax()) {
+    global $wp;
+    $url = home_url($wp->request) . '/';
+} else {
+    $url = get_page_link();
+}
+?>
 <!doctype html>
 <html lang="<?= SITE["lang"]; ?>" itemscope itemtype="https://schema.org/Article">
 
@@ -5,10 +28,13 @@
     <meta charset="utf-8">
 
     <!--CANONICAL-->
+    <link rel="canonical" href="<?= $url; ?>">
     <base href="<?= get_home_url(); ?>">
-    <link rel="alternate" href="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>" hreflang="x-default">
+    <link rel="alternate" href="<?= $url; ?>" hreflang="x-default">
 
-    <title><?= (is_home() || is_404() || is_search() ? SITE['name'] : (is_category() ? single_cat_title() . " - " . SITE["name"] : get_the_title() . " - " . SITE["name"])); ?></title>
+    <title><?= $title ?></title>
+
+    <meta name="keywords" content="<?= keywords(); ?>">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +44,8 @@
     <!-- REGION -->
     <meta name="geo.region" content="<?= REGION["region"]; ?>">
     <meta name="geo.placename" content="<?= REGION["placename"]; ?>">
-    <meta name="geo.position" content="<?= REGION["position"]; ?>">
-    <meta name="ICBM" content="<?= REGION["icbm"]; ?>">
+    <meta name="geo.position" content="<?= REGION["lat"] . ";" . REGION["long"]; ?>">
+    <meta name="ICBM" content="<?= REGION["lat"] . ", " . REGION["long"]; ?>">
 
     <!-- ROBOTS -->
     <meta name="robots" content="index, follow">
@@ -36,35 +62,35 @@
     <meta property="og:locale" content="<?= SITE["locale"]; ?>">
     <meta property="og:region" content="Brasil">
     <meta property="og:title" content="<?= SITE["name"] ?>">
-    <meta property="og:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
+    <meta property="og:image" content="<?= (!is_single() ? image(SITE["image"]) : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="700">
     <meta property="og:image:height" content="500">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
+    <meta property="og:url" content="<?= $url; ?>">
     <meta property="og:description" content="<?= description(); ?>">
     <meta property="og:site_name" content="<?= SITE["name"] ?>">
 
     <!-- SCHEMA.ORG -->
     <meta itemprop="name" content="<?= SITE["name"] ?>">
     <meta itemprop="description" content="<?= description(); ?>">
-    <meta itemprop="image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
-    <meta itemprop="url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
+    <meta itemprop="image" content="<?= (!is_single() ? image(SITE["image"]) : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
+    <meta itemprop="url" content="<?= $url; ?>">
     <meta itemprop="author" content="<?= DEV['name']; ?>">
-    <meta itemprop="headline" content="<?= (is_home() || is_404() || is_search() ? SITE['name'] : (is_category() ? single_cat_title() . " - " . SITE["name"] : get_the_title() . " - " . SITE["name"])); ?>">
+    <meta itemprop="headline" content="<?= $title ?>">
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" content="<?= SITE['domain']; ?>">
     <meta name="twitter:title" content="<?= SITE["name"] ?>">
     <meta name="twitter:description" content="<?= description(); ?>">
-    <meta name="twitter:image" content="<?= (!is_single() ? get_template_directory_uri() . '/assets/images/' . SITE["image"] : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
-    <meta name="twitter:url" content="<?= (is_home() || is_404() || is_search() ? get_home_url() : get_page_link()); ?>">
+    <meta name="twitter:image" content="<?= (!is_single() ? image(SITE["image"]) : get_the_post_thumbnail_url(get_the_ID(), 'share')); ?>">
+    <meta name="twitter:url" content="<?= $url; ?>">
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- standard -->
     <?php wp_head(); ?>
@@ -104,14 +130,16 @@
 
     <h1 class="hidden">
         <?php
-        if (is_home() || is_404()) {
+        if (is_home() || is_404() || is_search()) {
             echo SITE['name'];
         } elseif (is_single()) {
-            echo SITE['name'] . " - " . get_the_title();
+            echo  get_the_title() . " - " . SITE['name'];
         } elseif (is_category()) {
-            echo single_cat_title() . " - " . SITE["name"];
+            echo single_cat_title('', false) . " - " . SITE["name"];
+        } elseif (is_tax()) {
+            echo single_term_title('', false) . " - " . SITE["name"];
         } else {
-            echo get_the_title();
+            echo get_the_title() . " - " . SITE["name"];
         }
         ?>
     </h1>
@@ -125,6 +153,11 @@
         <!-- whatsapp -->
         <?php get_template_part('template-parts/header/header', 'whatsapp'); ?>
         <!-- end of whatsapp -->
+
+        <!-- cookies -->
+        <?php get_template_part('template-parts/header/cookies'); ?>
+
+        <!-- end of cookies -->
 
         <!-- main -->
         <main>
