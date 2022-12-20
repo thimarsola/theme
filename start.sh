@@ -41,8 +41,6 @@ git branch -M main
 git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
 git flow init
-npx husky install
-chmod a+x .husky/commit-msg
 
 echo ""
 printf "Digite o dominio do projeto: "
