@@ -29,15 +29,12 @@
     },
     "homepage": "https://github.com/thimarsola/repo-name#readme",
     "devDependencies": {
-        "@commitlint/cli": "^17.0.3",
-        "@commitlint/config-conventional": "^17.0.3",
         "autoprefixer": "^10.4.2",
         "browser-sync": "^2.27.10",
         "browser-sync-webpack-plugin": "^2.3.0",
         "compress-images": "^2.0.5",
         "cross-env": "^7.0.3",
         "gifsicle": "^5.2.1",
-        "husky": "^8.0.1",
         "imagemin": "^8.0.1",
         "imagemin-webp": "^7.0.0",
         "laravel-mix": "^6.0.6",
@@ -51,6 +48,7 @@
     },
     "dependencies": {
         "fslightbox": "^3.3.1",
+        "imask": "^6.4.3",
         "remixicon": "^2.5.0",
         "sweetalert2": "^11.1.5",
         "swiper": "^8.3.2"

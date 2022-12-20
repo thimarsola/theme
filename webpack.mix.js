@@ -16,6 +16,29 @@ mix
         "dist/js/script-home.js"
     )
 
+
+    //PAGE
+    .sass("assets/sass/style-pages.scss", "dist/css")
+    .js(
+        [
+            "assets/js/theme/functions/cookies.js",
+            "assets/js/theme/functions/menu.js",
+            "assets/js/theme/functions/sticky.js",
+        ],
+        "dist/js/script-pages.js"
+    )
+
+    //SINGLE
+    .sass("assets/sass/style-single.scss", "dist/css")
+    .js(
+        [
+            "assets/js/theme/functions/cookies.js",
+            "assets/js/theme/functions/menu.js",
+            "assets/js/theme/functions/sticky.js",
+        ],
+        "dist/js/script-single.js"
+    )
+
     //ERROR
     .sass("assets/sass/style-error.scss", "dist/css")
     .js(["assets/js/theme/functions/menu.js"], "dist/js/script-error.js")

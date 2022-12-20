@@ -1,91 +1,13 @@
 @use "../abstracts" as *;
 
 .footer{
-    &__content{
-        &__row{
-            &__wrapper{
-                &__row{
-                    &__menu{
-                        #menu__footer{
-                            li{
-                                a{
-                                    color: inherit;
-                                    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-                                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-                                    transition-duration: 1000ms;
-                                    
-                                    &:hover{
-                                        color: var(--clr-primary-300) !important;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-    //breakpoint 800px
-    @include bp(800px){
-        &__content{
-            &__row{
-                &__brand{
-                    max-width: 10rem;
-                    flex: 1;
-                    flex-basis: 100%;
-                }
-                
-                &__wrapper{
-                    flex-basis: 100%;
-                }
-            }
-        }
-    }
-    
-    //breakpoint 416px
-    @include bp(416px){
-        &__content{
-            &__row{
-                flex-wrap: wrap;
-                
-                &__brand{
-                    max-width: 100%;
-                    display: flex;
-                    flex-flow: column;
-                    align-items: center;
-                    
-                    img{
-                        width: 10rem;
-                    }
-                }
-                
-                &__wrapper{
-                    &__highlight{
-                        font-size: 1.25rem; /* 20px */
-                        line-height: 1.75rem; /* 28px */
-                    }
-                }
-            }
-        }
-        
+    position: relative;
+
+    //breakpoint 428px
+    @include bp(429px){
         &__developer{
             &__row{
                 justify-content: center;
-            }
-        }
-    }
-    
-    //breakpoint 360px
-    @include bp(360px){
-        &__content{
-            &__row{
-                &__wrapper{
-                    &__row{
-                        flex-wrap: wrap;
-                        gap: 3rem;
-                    }
-                }
             }
         }
     }
