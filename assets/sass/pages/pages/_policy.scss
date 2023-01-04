@@ -1,0 +1,41 @@
+@use "../../abstracts" as *;
+
+.policy {
+    section {
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+        }
+
+        & > header {
+            margin-bottom: toRem(12);
+
+            h2 {
+                font-size: toRem(24);
+                line-height: toRem(32);
+                color: var(--clr-neutral-800);
+            }
+        }
+
+        article {
+            &:not(:last-child) {
+                margin-bottom: toRem(16);
+            }
+
+            header {
+                h3 {
+                    font-size: toRem(20);
+                    line-height: toRem(28);
+                    color: var(--clr-neutral-800);
+                }
+            }
+        }
+    }
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+
+        line-height: 1.625;
+    }
+}
