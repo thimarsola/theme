@@ -2,11 +2,11 @@
 echo "---------- >>> Start Project Config <<< ----------"
 echo " "
 echo "Start project ..."
-sudo rm -rf .git
+sudo rm -rf .git;
 npm install;
 echo " "
-composer update
-mv source/Config-example.php source/Config.php
+composer update;
+mv source/Config-example.php source/Config.php;
 echo " "
 echo "Digite o nome do pacote(example):"
 printf ""
