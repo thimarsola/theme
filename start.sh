@@ -2,11 +2,11 @@
 echo "---------- >>> Start Project Config <<< ----------"
 echo " "
 echo "Start project ..."
-sudo rm -rf .git;
-npm install;
+sudo rm -rf .git
+npm install
 echo " "
-composer update;
-mv source/Config-example.php source/Config.php;
+composer update
+mv source/Config-example.php source/Config.php
 echo " "
 echo "Digite o nome do pacote(example):"
 printf ""
@@ -23,14 +23,14 @@ printf ""
 read repoName
 sed -i "s/repo-name/$repoName/g" package.json
 echo " "
-gh repo create $repoName --private;
-git init;
-git add README.md;
-git commit -m "first commit";
-git branch -M main;
-git remote add origin git@github.com:thimarsola/$repoName.git;
-git push -u origin main;
-git flow init;
+gh repo create $repoName --private
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:thimarsola/$repoName.git
+git push -u origin main
+git flow init
 echo " "
 echo "Digite o dominio do projeto:"
 printf ""
