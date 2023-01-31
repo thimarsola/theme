@@ -1,25 +1,22 @@
-//https://codepen.io/codeorum/pen/JjGzMRQ
+const cards = document.querySelectorAll(
+    ".doubts__row__wrapper__content__row__card"
+);
 
-function accordion(elem, option) {
-    document.addEventListener("click", function (e) {
-        if (!e.target.matches(elem + " .a-btn")) return;
-        else {
-            if (!e.target.parentElement.classList.contains("active")) {
-                if (option == true) {
-                    var elementList = document.querySelectorAll(
-                        elem + " .a-container"
-                    );
-                    Array.prototype.forEach.call(elementList, function (e) {
-                        e.classList.remove("active");
-                    });
-                }
-                e.target.parentElement.classList.add("active");
-            } else {
-                e.target.parentElement.classList.remove("active");
+let i = 0;
+Array.from(cards).forEach(function (card) {
+    const header = card.querySelector(
+            ".doubts__row__wrapper__content__row__card__header"
+        ),
+        active = "doubts__row__wrapper__content__row__card--active";
+
+    header.addEventListener("click", function () {
+        if (this.parentElement.classList.contains(active)) {
+            card.classList.remove(active);
+        } else {
+            for (let j = 0; j < cards.length; j++) {
+                cards[j].classList.remove(active);
             }
+            card.classList.add(active);
         }
     });
-}
-
-accordion(".accordion.v1", true);
-accordion(".accordion.v2", false);
+});
