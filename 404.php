@@ -13,7 +13,7 @@
 
         <!-- content -->
         <div class="error__content">
-            <a href="<?= get_home_url(); ?>" title="<?= SITE["name"]; ?>" class="btn-primary">Voltar para o início</a>
+            <a href="<?= get_home_url(); ?>" title="<?= SITE["name"]; ?>" class="btn-primary text-primary">Voltar para o início</a>
         </div>
         <!-- end of content -->
 
