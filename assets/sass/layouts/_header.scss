@@ -7,6 +7,11 @@
     min-height: toRem(120);
     max-height: 100vh;
     overflow: auto;
+    transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+        filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 1000ms;
 
     &__row {
         &__wrapper {
@@ -64,8 +69,8 @@
         }
     }
 
-    //breakpoint 800px
-    @include bp(800px) {
+    //breakpoint 810px
+    @include bp(810px) {
         &__row {
             display: block;
 
