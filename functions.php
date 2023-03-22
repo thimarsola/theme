@@ -12,6 +12,7 @@ require_once get_template_directory() . '/inc/Description.php';
 
 //META TAG KEYWORDS
 require_once get_template_directory() . '/inc/Keywords.php';
+
 //PATH URL IMAGE
 require_once get_template_directory() . '/inc/Image.php';
 
@@ -41,3 +42,6 @@ require_once get_template_directory() . '/inc/ThemeSupport.php';
 
 //DISABLE WORDPRESS FUNCTIONS
 require_once get_template_directory() . '/inc/Wordpress.php';
+
+//BREADCRUMB
+require_once get_template_directory() . '/inc/Breadcrumb.php';
