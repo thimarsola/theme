@@ -79,9 +79,10 @@ remove_filter('wp_robots', 'wp_robots_max_image_preview_large');
 remove_filter("the_content", "wptexturize");
 
 //fix close link tag
-function disable_self_closing_link_tag($link_tag): array|string
-{
-    return str_replace('/>', '>', $link_tag);
+function disable_self_closing_tags(): void {
+    ob_start( function ( $input ) {
+        return str_replace( '/>', '>', $input );
+    } );
 }
 
-add_filter('style_loader_tag', 'disable_self_closing_link_tag');
+add_action( 'wp_head', 'disable_self_closing_tags', 1 );
