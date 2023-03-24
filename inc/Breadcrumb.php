@@ -1,13 +1,14 @@
 <?php
 
-function get_breadcrumb($class = null): void
+function get_breadcrumb($class = null, $breadCurrent = null): void
 {
 
-    $separator         = '<i class="ri-arrow-right-s-line leading-none align-middle"></i>';
+    $separator         = '<span class="text-primary-500">|</span>';
     $breadcrumbs_id    = 'breadcrumb';
-    $breadcrumbs_class = 'flex flex-wrap items-center gap-1';
+    $breadcrumbs_class = 'flex flex-wrap items-center gap-4';
     $home_title        = 'Home';
     $style             = $class;
+    $current           = $breadCurrent;
 
     // Add here you custom post taxonomies
     $tsh_custom_taxonomy = 'product_cat';
@@ -15,22 +16,23 @@ function get_breadcrumb($class = null): void
     global $post, $wp_query;
 
     // Hide from front page
-    if (!is_front_page()) {
+    if ( ! is_front_page()) {
 
         echo '<ul id="' . $breadcrumbs_id . '" class="' . $breadcrumbs_class . '">';
 
         // Home
         echo '<li class="item-home"><a class=" ' . $style . ' bread-home" href="' . get_home_url() . '" title="' .
-            $home_title . '">' . '<i class="ri-home-4-fill leading-none align-middle mr-1"></i>' . $home_title . '</a></li>';
+             $home_title . '">' . $home_title . '</a></li>';
         echo '<li class="separator separator-home"> ' . $separator . ' </li>';
 
-        if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
+        if (is_archive() && ! is_tax() && ! is_category() && ! is_tag()) {
 
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . post_type_archive_title(
-                '',
-                false
-            ) . '</strong></li>';
-        } elseif (is_archive() && is_tax() && !is_category() && !is_tag()) {
+            echo '<li class="' . $current . ' item-current item-archive"><strong class="bread-current bread-archive">' .
+                 post_type_archive_title(
+                     '',
+                     false
+                 ) . '</strong></li>';
+        } elseif (is_archive() && is_tax() && ! is_category() && ! is_tag()) {
 
             // For Custom post type
             $post_type = get_post_type();
@@ -46,7 +48,8 @@ function get_breadcrumb($class = null): void
             }
 
             $custom_tax_name = get_queried_object()->name;
-            echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . $custom_tax_name . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-archive"><strong class="bread-current bread-archive">' .
+                 $custom_tax_name . '</strong></li>';
         } elseif (is_single()) {
 
             $post_type = get_post_type();
@@ -63,7 +66,7 @@ function get_breadcrumb($class = null): void
             // Get post category
             $category = get_the_category();
 
-            if (!empty($category)) {
+            if ( ! empty($category)) {
 
                 // Last category post is in
                 $last_category = $category[count($category) - 1];
@@ -81,7 +84,7 @@ function get_breadcrumb($class = null): void
             }
 
             $taxonomy_exists = taxonomy_exists($tsh_custom_taxonomy);
-            if (empty($last_category) && !empty($tsh_custom_taxonomy) && $taxonomy_exists) {
+            if (empty($last_category) && ! empty($tsh_custom_taxonomy) && $taxonomy_exists) {
 
                 $taxonomy_terms = get_the_terms($post->ID, $tsh_custom_taxonomy);
                 $cat_id         = $taxonomy_terms[0]->term_id;
@@ -91,27 +94,31 @@ function get_breadcrumb($class = null): void
             }
 
             // If the post is in a category
-            if (!empty($last_category)) {
+            if ( ! empty($last_category)) {
                 echo $cat_display;
-                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+                echo '<li class="' . $current . ' item-current item-' . $post->ID . '"><strong class="bread-current bread-' .
+                     $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
 
                 // Post is in a custom taxonomy
-            } elseif (!empty($cat_id)) {
+            } elseif ( ! empty($cat_id)) {
 
                 echo '<li class="item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . '"><a class="bread-cat bread-cat-' . $cat_id . ' bread-cat-' . $cat_nicename . '" href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a></li>';
                 echo '<li class="separator"> ' . $separator . ' </li>';
-                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+                echo '<li class="' . $current . ' item-current item-' . $post->ID . '"><strong class="bread-current bread-' .
+                     $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
             } else {
 
-                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+                echo '<li class="' . $current . ' item-current item-' . $post->ID . '"><strong class="bread-current bread-' .
+                     $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
             }
         } elseif (is_category()) {
 
             // Category page
-            echo '<li class="item-current item-cat"><strong class="bread-current bread-cat">' . single_cat_title(
-                '',
-                false
-            ) . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-cat"><strong class="bread-current bread-cat">' .
+                 single_cat_title(
+                     '',
+                     false
+                 ) . '</strong></li>';
         } elseif (is_page()) {
 
             // Standard page
@@ -124,7 +131,7 @@ function get_breadcrumb($class = null): void
                 $anc = array_reverse($anc);
 
                 // Parent pages
-                if (!isset($parents)) {
+                if ( ! isset($parents)) {
                     $parents = null;
                 }
                 foreach ($anc as $ancestor) {
@@ -136,11 +143,14 @@ function get_breadcrumb($class = null): void
                 echo $parents;
 
                 // Active page
-                echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></li>';
+                echo '<li class="' . $current . ' item-current item-' . $post->ID . '"><strong title="' .
+                     get_the_title() .
+                     '"> ' . get_the_title() . '</strong></li>';
             } else {
 
                 // Just display active page if not parents pages
-                echo '<li class="item-current item-' . $post->ID . '"><strong class="bread-current bread-' . $post->ID . '"> ' . get_the_title() . '</strong></li>';
+                echo '<li class="' . $current . ' item-current item-' . $post->ID . '"><strong class="bread-current bread-' .
+                     $post->ID . '"> ' . get_the_title() . '</strong></li>';
             }
         } elseif (is_tag()) { // Tag page
 
@@ -154,7 +164,8 @@ function get_breadcrumb($class = null): void
             $get_term_name = $terms[0]->name;
 
             // Return tag name
-            echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug
+                 . '"><strong class="bread-current bread-tag-' . $get_term_id . ' bread-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
         } elseif (is_day()) { // Day archive page
 
             // Year link
@@ -163,13 +174,14 @@ function get_breadcrumb($class = null): void
 
             // Month link
             echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="' . $style . ' bread-month-' . get_the_time('m') . '" href="' . get_month_link(
-                get_the_time('Y'),
-                get_the_time('m')
-            ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
+                    get_the_time('Y'),
+                    get_the_time('m')
+                ) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
             echo '<li class="separator separator-' . get_the_time('m') . '"> ' . $separator . ' </li>';
 
             // Day display
-            echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
+            echo '<li class="' . $current . ' item-current item-' . get_the_time('j') . '"><strong class="bread-current bread-' .
+                 get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
         } elseif (is_month()) { // Month Archive
 
             // Year link
@@ -180,7 +192,8 @@ function get_breadcrumb($class = null): void
             echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="bread-month bread-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</strong></li>';
         } elseif (is_year()) { // Display year archive
 
-            echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></li>';
+            echo '<li class="' . $current . ' item-current item-current-' . get_the_time('Y') . '"><strong class="bread-current
+            bread-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></li>';
         } elseif (is_author()) { // Author archive
 
             // Get the author information
@@ -188,15 +201,16 @@ function get_breadcrumb($class = null): void
             $userdata = get_userdata($author);
 
             // Display author name
-            echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-current-' . $userdata->user_nicename . '"><strong class="bread-current bread-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
         } elseif (get_query_var('paged')) {
 
             // Paginated archives
-            echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">' . __('Page') . ' ' . get_query_var('paged') . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-current-' . get_query_var('paged') . '"><strong class="bread-current
+            bread-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">' . __('Page') . ' ' . get_query_var('paged') . '</strong></li>';
         } elseif (is_search()) {
 
             // Search results page
-            echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
+            echo '<li class="' . $current . ' item-current item-current-' . get_search_query() . '"><strong class="bread-current bread-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
         } elseif (is_404()) {
 
             // 404 page
