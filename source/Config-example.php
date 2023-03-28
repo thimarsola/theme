@@ -47,10 +47,10 @@ const REGION = array(
  * CONTACT
  */
 const CONTACT = array(
-    "whatsapp"    => [
+    "whatsapp"    => array(
         "number"  => "",
         "message" => "",
-    ],
+    ),
     "phone"       => array(),
     "mail"        => "",
     "address"     => "",
@@ -60,6 +60,6 @@ const CONTACT = array(
 const SOCIAL = array(
     "instagram" => "",
     "facebook"  => "",
-    "youtube"   => null,
-    "linkedin"  => null
+    "youtube"   => "",
+    "linkedin"  => ""
 );
