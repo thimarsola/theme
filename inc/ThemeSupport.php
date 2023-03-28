@@ -1,12 +1,19 @@
 <?php
 
-function customThemeSupport() {
+/**
+ * Add theme support for HTML5 elements.
+ *
+ * @return void
+ */
+function custom_theme_support(): void {
     add_theme_support(
         'html5',
         array(
-            'script', // Fix for: The "type" attribute is unnecessary for JavaScript resources.
-            'style',  // Fix for: The "type" attribute for the "style" element is not needed and should be omitted.
+            'style',
+            'script',
         )
     );
 }
-add_action( 'after_setup_theme', 'customThemeSupport' );
+
+add_action( 'after_setup_theme', 'custom_theme_support' );
+

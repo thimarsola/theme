@@ -6,8 +6,8 @@
             <div class="header__row__wrapper">
                 <!-- brand -->
                 <div class="header__row__wrapper__brand">
-                    <a href="<?= (is_home() ? '#home' : get_home_url()); ?>" title="<?= SITE["name"]; ?>">
-                        <img src="<?= image('logo.svg'); ?>" alt="Logo <?= SITE['name']; ?>" loading="lazy">
+                    <a href="<?php echo (is_home() ? '#home' : get_home_url()); ?>" title="<?php echo SITE["name"]; ?>">
+                        <img src="<?php echo get_image('logo.svg'); ?>" alt="Logo <?php echo SITE['name']; ?>" loading="lazy">
                     </a>
                 </div>
                 <!-- end of brand -->

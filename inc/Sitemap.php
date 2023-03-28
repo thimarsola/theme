@@ -1,10 +1,10 @@
 <?php
 
-//add_action('init', function () {
-//   remove_action('init', 'wp_sitemaps_get_server');
-//}, 5);
+// Custom Sitemap
+add_filter( 'wp_sitemaps_add_provider', function ( $provider, $name ) {
+    if ( $name === 'users' ) {
+        return false;
+    }
 
-//custom sitemap
-add_filter( 'wp_sitemaps_add_provider', function ($provider, $name) {
-   return ( $name == 'users' ) ? false : $provider;
-}, 10, 2);
+    return $provider;
+}, 10, 2 );

@@ -1,47 +1,55 @@
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 
-//FORMAT PHONE NUMBER
+// Include classes and functions for formatting and modifying the theme.
+
+// Format phone numbers.
 require_once get_template_directory() . '/inc/Format.php';
 
-//CREATE A WHATSAPP ANCHOR
+// Create a WhatsApp link.
 require_once get_template_directory() . '/inc/Whatsapp.php';
 
-//META TAG DESCRIPTION
+// Add meta tag for description.
 require_once get_template_directory() . '/inc/Description.php';
 
-//META TAG KEYWORDS
+// Add meta tag for keywords.
 require_once get_template_directory() . '/inc/Keywords.php';
 
-//PATH URL IMAGE
+// Modify the URL of the site's image.
 require_once get_template_directory() . '/inc/Image.php';
 
-//LOAD CSS
+// Add custom CSS styles.
 require_once get_template_directory() . '/inc/Styles.php';
 
-//LOAD JS
+// Add custom JavaScript.
 require_once get_template_directory() . '/inc/Scripts.php';
 
-//REGISTER MENU
+// Register navigation menus.
 require_once get_template_directory() . '/inc/Menu.php';
 
-//THUMBNAILS SUPPORT
+// Add support for featured images.
 require_once get_template_directory() . '/inc/Thumbnails.php';
 
-//EXCERPT SUPPORT
+// Add support for post excerpts.
 require_once get_template_directory() . '/inc/Excerpt.php';
 
-//PAGINATION SUPPORT
+// Add support for paginated posts.
 require_once get_template_directory() . '/inc/Pagination.php';
 
-//SITEMAP SUPPORT
+// Add support for generating a sitemap.
 require_once get_template_directory() . '/inc/Sitemap.php';
 
-//CUSTOM THEME SUPPORT
+// Add custom theme support.
 require_once get_template_directory() . '/inc/ThemeSupport.php';
 
-//DISABLE WORDPRESS FUNCTIONS
+// Disable certain WordPress functions.
 require_once get_template_directory() . '/inc/Wordpress.php';
 
-//BREADCRUMB
+// Add breadcrumbs to the site.
 require_once get_template_directory() . '/inc/Breadcrumb.php';
+
+// Get the page title for use in the <head> section.
+require_once get_template_directory() . '/inc/Title.php';
+
+// Get the URL for use in the <head> section.
+require_once get_template_directory() . '/inc/Url.php';
