@@ -28,6 +28,20 @@ mix
         "dist/js/script-pages.js"
     )
 
+    // PAGE - CONTACT
+    .copy('node_modules/imask/dist/imask.js.map', 'dist/js').js(
+    [
+        'assets/js/theme/functions/cookies.js',
+        'assets/js/theme/functions/menu.js',
+        'assets/js/theme/functions/sticky.js',
+        'node_modules/imask/dist/imask.js',
+        'assets/js/theme/functions/mask.js',
+        'node_modules/sweetalert2/dist/sweetalert2.js',
+        'assets/js/theme/request/request.js',
+    ],
+    'dist/js/script-contact.js',
+)
+
     //SINGLE
     .sass("assets/sass/style-single.scss", "dist/css")
     .js(

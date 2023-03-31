@@ -6,8 +6,8 @@
  * @return string
  */
 function get_description(): string {
-    if ( is_home() ) {
-        $description = '';
+    if (is_singular('post') ) {
+        $description = get_the_excerpt();
     } else {
         $description = '';
     }
