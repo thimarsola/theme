@@ -54,7 +54,7 @@ const CONTACT = array(
     "phone"       => array(),
     "mail"        => "",
     "address"     => "",
-    "addressLink" => "",
+    "address_link" => "",
 );
 
 const SOCIAL = array(
