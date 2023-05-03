@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-.cookies{
+.cookies {
     position: fixed;
     bottom: toRem(-370);
     left: 0;
@@ -9,39 +9,39 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 1000ms;
 
-    &__wrapper{
+    &__wrapper {
         display: flex;
         gap: toRem(32);
 
-        &__header{
-            img{
-                width: toRem(32);
+        &__header {
+            img {
+                max-width: max-content;
+                height: toRem(40);
             }
         }
 
-        &__data{
-            .link-primary-500{
-                &:hover{
+        &__data {
+            .link-primary-500 {
+                &:hover {
                     text-decoration: underline !important;
                 }
             }
         }
-
     }
 
-    &--active{
+    &--active {
         left: 0;
         bottom: 0;
     }
 
     //breakpoint 601px
-    @include bp(602px){
+    @include bp(602px) {
         &__wrapper {
             flex-flow: column;
             gap: toRem(16);
 
-            &__button{
-                button{
+            &__button {
+                button {
                     width: 100%;
                 }
             }
