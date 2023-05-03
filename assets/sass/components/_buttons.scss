@@ -8,24 +8,30 @@
     align-items: center;
     justify-content: center;
     gap: toRem(4);
+
     font: {
         weight: var(--font-semibold);
         size: toRem(16);
     }
+
     cursor: pointer;
     outline: none;
     border: none;
     transform: scale(1);
     line-height: 1.1 !important;
-    transition-property: color, background-color, border-color,
-    text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-    filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+        transform, filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 1000ms;
 
     &:active {
         transform: scale(1.1);
         transition: transform 0.3s ease-in-out;
+    }
+
+    //breakpoint 428px
+    @include bp(429px) {
+        width: 100%;
     }
 }
 
@@ -34,11 +40,11 @@
     color: #fff;
     background: var(--clr-primary-500);
 
-    &:focus{
+    &:focus {
         border: 2px solid var(--clr-primary-700);
     }
 
     &:hover {
-        background: var(--clr-secondary-500);
+        background: var(--clr-primary-700);
     }
 }

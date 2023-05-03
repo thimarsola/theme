@@ -1,15 +1,14 @@
 @use "../abstracts" as *;
 
 .header {
+    $this: &;
     top: 0;
     left: 0;
     width: 100%;
     min-height: toRem(120);
     max-height: 100vh;
     overflow: auto;
-    transition-property: color, background-color, border-color,
-        text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-        filter, backdrop-filter;
+    transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 1000ms;
 
@@ -20,12 +19,16 @@
                     &:nth-child(1),
                     &:nth-child(3) {
                         transform: initial;
-                        @include transition(all);
+                        transition-property: all;
+                        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                        transition-duration: 800ms;
                     }
 
                     &:nth-child(2) {
                         opacity: 1;
-                        @include transition(all);
+                        transition-property: all;
+                        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                        transition-duration: 800ms;
                     }
                 }
             }
@@ -47,7 +50,7 @@
                                         left: 0;
                                         width: 100%;
                                         height: 4px;
-                                        background: var(--clr-primary-500);
+                                        background: var(--clr-secondary-500);
                                         transform-origin: left center;
                                         transform: scaleX(0);
                                         opacity: 0;
@@ -71,6 +74,9 @@
 
     //breakpoint 810px
     @include bp(811px) {
+        min-height: auto;
+        padding: toRem(24) 0;
+
         &__row {
             display: block;
 
@@ -90,12 +96,13 @@
                 width: 100%;
                 max-height: 0;
                 overflow: hidden;
-                transition-property: max-height;
-                transition-timing-function: linear;
-                transition-duration: 300ms;
+                visibility: collapse;
+                transition-property: all;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 800ms;
 
                 &__nav {
-                    border-top: 2px solid var(--clr-primary-500);
+                    border-top: 2px solid var(--clr-secondary-500);
                     margin-top: toRem(32);
                     padding: toRem(32) 0;
                     display: block;
@@ -108,8 +115,37 @@
 
                                 li {
                                     font-size: toRem(18);
-                                    color: var(--clr-neutral-400);
                                     font-weight: var(--font-medium);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //breakpoint 428px
+    @include bp(429px) {
+        &__row {
+            &__content {
+                &__nav {
+                    &__navbar {
+                        &__content {
+                            &__menu {
+                                gap: toRem(16);
+
+                                li {
+                                    width: 100%;
+                                    background: var(--clr-neutral-200);
+                                    border-radius: toRem(6);
+
+                                    a {
+                                        width: 100%;
+                                        padding: toRem(16);
+                                        display: block;
+                                        text-align: center;
+                                    }
                                 }
                             }
                         }
@@ -125,7 +161,7 @@
             &__wrapper {
                 &__brand {
                     img {
-                        height: toRem(80);
+                        height: toRem(64);
                     }
                 }
             }
@@ -134,24 +170,33 @@
 
     //menu active
     &--active {
-        .header__row__content {
-            max-height: 100vh;
-        }
-
-        .header__row__wrapper__toggle {
-            span {
-                &:nth-child(1) {
-                    transform-origin: center;
-                    transform: rotate(45deg) translate(8px, 8px);
+        #{$this} {
+            &__row {
+                &__content {
+                    max-height: 100vh;
+                    //visibility: visible;
+                    visibility: initial;
                 }
 
-                &:nth-child(2) {
-                    opacity: 0;
-                }
+                &__wrapper {
+                    &__toggle {
+                        span {
+                            &:nth-child(1) {
+                                transform-origin: center;
+                                transform: rotate(45deg) translate(8px, 8px);
+                            }
 
-                &:nth-child(3) {
-                    transform-origin: center;
-                    transform: rotate(-45deg) translate(9px, -9px);
+                            &:nth-child(2) {
+                                opacity: 0;
+                                visibility: hidden;
+                            }
+
+                            &:nth-child(3) {
+                                transform-origin: center;
+                                transform: rotate(-45deg) translate(9px, -9px);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -169,6 +214,7 @@
             from {
                 transform: translateY(-120%);
             }
+
             to {
                 transform: translateY(0);
             }
