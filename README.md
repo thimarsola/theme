@@ -1,4 +1,4 @@
-#project-name
+# project-name
 
 This is repository for the website [project-name](https://domain "project-name").
 

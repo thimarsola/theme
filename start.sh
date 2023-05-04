@@ -26,12 +26,15 @@ echo " "
 gh repo create $repoName --private
 git init
 git add README.md
-git commit -m "wip"
+git commit -m "KEY-0: start project"
 git branch -M main
 git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
+git checkout -b develop
+git add .
+git commit -m "KEY-0: wip"
+npm install husky --save-dev
 npx husky install
-npx husky add .husky/commit-msg
 dos2unix .husky/commit-msg
 echo " "
 echo "Digite o dominio do projeto(domain.com.br):"
