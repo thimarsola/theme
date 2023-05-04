@@ -24,6 +24,11 @@ read repoName
 sed -i "s/repo-name/$repoName/g" package.json
 echo " "
 gh repo create $repoName --private
+echo " "
+echo "Digite o dominio do projeto(domain.com.br):"
+printf ""
+read domain
+sed -i "s/domain/$domain/g" style.css README.md
 git init
 git add README.md
 git commit -m "KEY-0: start project"
@@ -36,9 +41,4 @@ git commit -m "KEY-0: wip"
 npm install husky --save-dev
 npx husky install
 dos2unix .husky/commit-msg
-echo " "
-echo "Digite o dominio do projeto(domain.com.br):"
-printf ""
-read domain
-sed -i "s/domain/$domain/g" style.css README.md
 echo "---------- >>> Finish Config <<< ----------"
