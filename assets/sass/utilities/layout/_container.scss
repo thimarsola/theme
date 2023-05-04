@@ -1,40 +1,4 @@
-@use '../../abstracts' as *;
-
-/*
-* CONTAINER
-*/
-.container {
-    width: 100%;
-    margin-inline: auto;
-    padding-left: toRem(24);
-    padding-right: toRem(24);
-
-    @include breakpoint(sm) {
-        max-width: var(--sm);
-    }
-
-    @include breakpoint(md) {
-        max-width: var(--md);
-    }
-
-    @include breakpoint(lg) {
-        max-width: var(--lg);
-    }
-
-    @include breakpoint(xl) {
-        max-width: var(--xl);
-        padding-left: toRem(32);
-        padding-right: toRem(32);
-    }
-
-    @include breakpoint(#{2xl}) {
-        max-width: var(--2xl);
-        padding-left: toRem(96);
-        padding-right: toRem(96);
-    }
-}
-
-@use '../../abstracts' as *;
+@use "../../abstracts" as *;
 
 /*
 * CONTAINER
