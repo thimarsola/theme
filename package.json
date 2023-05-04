@@ -16,8 +16,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production",
-        "prepare": "husky install"
+        "production": "mix --production"
     },
     "repository": {
         "type": "git",
@@ -36,7 +35,6 @@
         "compress-images": "^2.0.5",
         "cross-env": "^7.0.3",
         "gifsicle": "^5.2.1",
-        "husky": "^8.0.3",
         "imagemin": "^8.0.1",
         "imagemin-webp": "^7.0.0",
         "laravel-mix": "^6.0.6",
