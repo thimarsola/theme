@@ -36,10 +36,11 @@ git branch -M main
 git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
 git checkout -b develop
+git add .
+git commit -m "KEY-0: wip"
+git checkout -b feature/KEY-01-initial-config
 npm install husky --save-dev
 npx husky install
 dos2unix .husky/commit-msg
-git add .
-git commit -m "KEY-0: wip"
 echo " "
 echo "---------- >>> Finish Config <<< ----------"
