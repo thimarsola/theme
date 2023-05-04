@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env sh
+sudo rm -rf .git
 echo "---------- >>> Start Project Config <<< ----------"
 echo " "
 echo "Start project ..."
-sudo rm -rf .git
 npm install
 echo " "
 composer update
@@ -26,11 +26,13 @@ echo " "
 gh repo create $repoName --private
 git init
 git add README.md
-git commit -m "first commit"
+git commit -m "wip"
 git branch -M main
 git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
-git flow init
+npx husky install
+npx husky add .husky/commit-msg
+dos2unix .husky/commit-msg
 echo " "
 echo "Digite o dominio do projeto(domain.com.br):"
 printf ""
