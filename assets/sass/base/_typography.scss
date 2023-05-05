@@ -8,7 +8,7 @@
 html {
     font-size: var(--font-base);
     font-weight: var(--font-normal);
-    color: var(--clr-neutral-600);
+    color: var(--clr-neutral-500);
 }
 
 body {
@@ -61,5 +61,5 @@ address {
 input,
 textarea {
     font: inherit;
-    color: var(--clr-neutral-300);
+    color: var(--clr-neutral-400);
 }
