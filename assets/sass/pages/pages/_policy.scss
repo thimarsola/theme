@@ -1,41 +1,15 @@
 @use "../../abstracts" as *;
 
 .policy {
-    section {
-        &:not(:last-child) {
-            margin-bottom: toRem(24);
-        }
+    position: relative;
 
-        & > header {
-            margin-bottom: toRem(12);
-
+    //breakpoint 428px
+    @include bp(429px) {
+        &__header {
             h2 {
-                font-size: toRem(24);
-                line-height: toRem(32);
-                color: var(--clr-neutral-800);
+                font-size: toRem(30);
+                line-height: toRem(36);
             }
         }
-
-        article {
-            &:not(:last-child) {
-                margin-bottom: toRem(16);
-            }
-
-            header {
-                h3 {
-                    font-size: toRem(20);
-                    line-height: toRem(28);
-                    color: var(--clr-neutral-800);
-                }
-            }
-        }
-    }
-
-    p {
-        &:not(:last-child) {
-            margin-bottom: toRem(16);
-        }
-
-        line-height: 1.625;
     }
 }

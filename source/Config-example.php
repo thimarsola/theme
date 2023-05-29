@@ -47,10 +47,8 @@ const REGION = array(
  * CONTACT
  */
 const CONTACT = array(
-    "whatsapp"    => array(
-        "number"  => "",
-        "message" => "",
-    ),
+    "whatsapp_number"    => "",
+    "whatsapp_message"    => "",
     "phone"       => array(),
     "mail"        => "",
     "address"     => "",

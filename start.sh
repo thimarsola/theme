@@ -36,6 +36,7 @@ git branch -M main
 git remote add origin git@github.com:thimarsola/$repoName.git
 git push -u origin main
 git checkout -b develop
+npm run dev
 git add .
 git commit -m "KEY-0: wip"
 git checkout -b feature/KEY-01-initial-config
