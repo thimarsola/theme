@@ -50,7 +50,7 @@ function get_breadcrumb(
             if ($categories) {
 
                 foreach ($categories as $category) {
-                    echo '<li><span class="' . esc_attr($class_separator) . '">' . esc_html($separator) . '</span></li>';
+                    echo '<li><span class="' . esc_attr($class_separator) . '">' . $separator . '</span></li>';
                     echo
                     '<li class="' . esc_attr($class_item) . '">
                             <a class="' . esc_attr($class_link) . '" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>
@@ -60,7 +60,7 @@ function get_breadcrumb(
         }
 
         if (is_single()) {
-            echo '<li><span class="' . esc_attr($class_separator) . '">' . esc_html($separator) . '</span></li>';
+            echo '<li><span class="' . esc_attr($class_separator) . '">' . $separator . '</span></li>';
             echo
             '<li class="' . esc_attr($class_item) . '">
                 <span class="' . esc_attr($class_current) . '">' . get_the_title() . '</span>
@@ -75,7 +75,7 @@ function get_breadcrumb(
             $ancestors = array_reverse($ancestors);
 
             foreach ($ancestors as $ancestor) {
-                echo '<li><span class="' . esc_attr($class_separator) . '">' . esc_html($separator) . '</span></li>';
+                echo '<li><span class="' . esc_attr($class_separator) . '">' . $separator . '</span></li>';
                 echo
                 '<li class="' . esc_attr($class_item) . '">
                         <a class="' . esc_attr($class_link) . '" href="' . esc_url(get_permalink($ancestor)) . '">' . esc_html(get_the_title($ancestor)) . '</a>
@@ -83,7 +83,7 @@ function get_breadcrumb(
             }
         }
 
-        echo '<li><span class="' . esc_attr($class_separator) . '">' . esc_html($separator) . '</span></li>';
+        echo '<li><span class="' . esc_attr($class_separator) . '">' . $separator . '</span></li>';
         echo
         '<li class="' . esc_attr($class_item) . '">
                 <span class="' . esc_attr($class_current) . '">' . get_the_title() . '</span>
