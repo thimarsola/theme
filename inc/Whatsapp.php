@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Generates a link to WhatsApp.
  *
@@ -10,13 +11,14 @@
  *
  * @return string Returns the HTML for the WhatsApp link.
  */
-function whatsapp_link( $phone, $message, $text = null, $class = null, $title = 'Vamos conversar?' ): string {
-    if ( null === $class ) {
+function whatsapp_link($phone, $message, $text = null, $class = null, $title = 'Vamos conversar?'): string
+{
+    if (null === $class) {
         $data_class = '';
     } else {
-        $data_class = 'class="' . esc_attr( $class ) . '"';
+        $data_class = 'class="' . esc_attr($class) . '"';
     }
 
     return '<a rel="nofollow noreferrer noopener" ' . $data_class . ' href="https://api.whatsapp.com/send?phone=55' .
-           esc_attr( format_phone( $phone ) ) . '&text=' . rawurlencode( $message ) . '" target="_blank" title="' . esc_attr( $title ) . '">' . $text . '</a>';
+        esc_attr(format_phone($phone)) . esc_html('&text=') . rawurlencode($message) . '" target="_blank" title="' . esc_attr($title) . '">' . $text . '</a>';
 }
