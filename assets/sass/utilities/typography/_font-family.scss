@@ -1,0 +1,13 @@
+@use "../../abstracts" as *;
+
+.font-default {
+    font-family: var(--font-default);
+}
+
+.font-reading {
+    font-family: var(--font-reading);
+}
+
+.font-highlight {
+    font-family: var(--font-highlight);
+}
