@@ -3,7 +3,7 @@
 /**
  * Loads the appropriate JS script based on the current page type.
  */
-function loadJS(): void {
+function load_js(): void {
 	if ( is_home() ) {
 		wp_enqueue_script( 'scripts', get_template_directory_uri() . '/dist/js/script-home.js', array(), null, true );
 	} elseif ( is_page() || is_archive() ) {
@@ -15,4 +15,4 @@ function loadJS(): void {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'loadJS' );
+add_action( 'wp_enqueue_scripts', 'load_js' );

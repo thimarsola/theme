@@ -4,17 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0e67dbb-6b5e-451a-80d4-39a8116cfa4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/phpcs.xml.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpstan.neon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Image.php" afterDir="false" />
+    <list default="true" id="d0e67dbb-6b5e-451a-80d4-39a8116cfa4a" name="Changes" comment="installing phpstan, phpcodesniffer, php-parallel, setting up">
+      <change beforePath="$PROJECT_DIR$/.husky/pre-commit" beforeDir="false" afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Keywords.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Keywords.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Pagination.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Scripts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Sitemap.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Sitemap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/Styles.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Styles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Url.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Url.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Wordpress.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Wordpress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/Title.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Title.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Support/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Email.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Support/Sender.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Sender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/component/component-tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/component/component-tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-copyright.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-copyright.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-developer.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-developer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/header/cookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/header/cookies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/header/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/header/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/pages/page-policy.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/pages/page-policy.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,17 +42,11 @@
       <interpreter name="Ubuntu-22.04" composer="composer" />
     </execution>
   </component>
-  <component name="FormatOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="OptimizeOnSaveOptions">
-    <option name="myRunOnSave" value="true" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Ubuntu-22.04">
     <include_path>
@@ -61,6 +70,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2S70iaOPbAkLGB2WR8DQ7Ebjtzp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,7 +83,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "code.cleanup.on.save": "true",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "WSL",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "WSL",
     "git-widget-placeholder": "develop",
@@ -81,8 +92,7 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -101,7 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1688482440025</updated>
       <workItem from="1688482441355" duration="1127000" />
-      <workItem from="1688483605468" duration="217000" />
+      <workItem from="1688483605468" duration="487000" />
+      <workItem from="1688505522539" duration="1340000" />
     </task>
     <servers />
   </component>

@@ -8,19 +8,13 @@
 function pagination( string $args = '' ) {
 	global $wp_query, $wp_rewrite;
 
-	// Setting up default values based on the current URL.
 	$pagenum_link = html_entity_decode( get_pagenum_link() );
 	$url_parts    = explode( '?', $pagenum_link );
-
-	// Get max pages and current page out of the current query, if available.
-	$total   = $wp_query->max_num_pages ?? 1;
-	$current = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-
-	// Append the format placeholder to the base URL.
+	$total        = $wp_query->max_num_pages ?? 1;
+	$current      = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
 	$pagenum_link = trailingslashit( $url_parts[0] ) . '%_%';
+	$format       = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
 
-	// URL base depends on permalink settings.
-	$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
 	$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit(
 		$wp_rewrite->pagination_base . '/%#%',
 		'paged'
@@ -54,17 +48,13 @@ function pagination( string $args = '' ) {
 		$args['add_args'] = array();
 	}
 
-	// Merge additional query vars found in the original URL into 'add_args' array.
 	if ( isset( $url_parts[1] ) ) {
-		// Find the format argument.
 		$format       = explode( '?', str_replace( '%_%', $args['format'], $args['base'] ) );
 		$format_query = $format[1] ?? '';
 		wp_parse_str( $format_query, $format_args );
 
-		// Find the query args of the requested URL.
 		wp_parse_str( $url_parts[1], $url_query_args );
 
-		// Remove the format argument from the array of query arguments, to avoid overwriting custom format.
 		foreach ( $format_args as $format_arg => $format_arg_value ) {
 			unset( $url_query_args[ $format_arg ] );
 		}
@@ -72,14 +62,13 @@ function pagination( string $args = '' ) {
 		$args['add_args'] = array_merge( $args['add_args'], urlencode_deep( $url_query_args ) );
 	}
 
-	// Who knows what else people pass in $args.
 	$total = (int) $args['total'];
 	if ( $total < 2 ) {
 		return '';
 	}
 
 	$current  = (int) $args['current'];
-	$end_size = (int) $args['end_size']; // Out of bounds? Make it the default.
+	$end_size = (int) $args['end_size'];
 	if ( $end_size < 1 ) {
 		$end_size = 1;
 	}
@@ -94,7 +83,7 @@ function pagination( string $args = '' ) {
 	$dots       = false;
 
 	if ( $args['prev_next'] && $current && 1 < $current ) :
-		$link = str_replace( '%_%', 2 == $current ? '' : $args['format'], $args['base'] );
+		$link = str_replace( '%_%', 2 === $current ? '' : $args['format'], $args['base'] );
 		$link = str_replace( '%#%', (string) ( $current - 1 ), $link );
 
 		if ( $add_args ) {
@@ -117,7 +106,7 @@ function pagination( string $args = '' ) {
 	endif;
 
 	for ( $n = 1; $n <= $total; $n++ ) :
-		if ( $n == $current ) :
+		if ( $n === $current ) :
 			$page_links[] = sprintf(
 				'<span aria-current="%s" class="pagination__nav__list__item__link pagination__nav__list__item__link--active"><strong>%s</strong></span>',
 				esc_attr( $args['aria_current'] ),
@@ -125,10 +114,10 @@ function pagination( string $args = '' ) {
 			);
 			$dots         = true;
 		else :
-			// reset dots to false at the beginning of each loop
+
 			$dots = false;
 			if ( $args['show_all'] || ( $n <= $end_size || ( $current && $n >= $current - $mid_size && $n <= $current + $mid_size ) || $n > $total - $end_size ) ) :
-				$link = str_replace( '%_%', 1 == $n ? '' : $args['format'], $args['base'] );
+				$link = str_replace( '%_%', 1 === $n ? '' : $args['format'], $args['base'] );
 				$link = str_replace( '%#%', (string) $n, $link );
 
 				if ( $add_args ) {
@@ -138,7 +127,6 @@ function pagination( string $args = '' ) {
 
 				$page_links[] = sprintf(
 					'<a class="pagination__nav__list__item__link" href="%s">%s</a>',
-					/** This filter is documented in wp-includes/general-template.php */
 					esc_url( apply_filters( 'paginate_links', $link ) ),
 					$args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number']
 				);
@@ -147,7 +135,6 @@ function pagination( string $args = '' ) {
 			endif;
 			if ( $dots && ! $args['show_all'] ) :
 				$page_links[] = '<span class="pagination__nav__list__item__dots">' . __( '&hellip;' ) . '</span>';
-				// no need to set dots to false here because we already did it at the beginning of the loop
 			endif;
 		endif;
 	endfor;

@@ -3,7 +3,7 @@
 /**
  * Function that returns a list of keywords from the post title, excluding common words and adding a custom string.
  *
- * @param string $name Custom string to add to the keywords list.
+ * @param  string  $name  Custom string to add to the keywords list.
  *
  * @return string Comma-separated list of keywords.
  */
@@ -45,7 +45,7 @@ function get_post_keywords( string $name ): string {
 	$words    = explode( ' ', get_the_title() );
 
 	foreach ( $words as $word ) {
-		if ( ! in_array( $word, $exclude ) ) {
+		if ( ! in_array( $word, $exclude, true ) ) {
 			$keywords[] = str_replace( array( ':', ',', ';', '?', ' ', '|', '/', '\/' ), '', $word );
 		}
 	}

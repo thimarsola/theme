@@ -7,12 +7,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use stdClass;
 
 class Email {
+	const MAIL_HOST = MAIL['host'];
 
-	const MAIL_HOST       = MAIL['host'];
-	const MAIL_PORT       = MAIL['port'];
-	const MAIL_USER       = MAIL['user'];
-	const MAIL_PASS       = MAIL['passwd'];
-	const MAIL_FROM_NAME  = MAIL['from_name'];
+	const MAIL_PORT = MAIL['port'];
+
+	const MAIL_USER = MAIL['user'];
+
+	const MAIL_PASS = MAIL['passwd'];
+
+	const MAIL_FROM_NAME = MAIL['from_name'];
+
 	const MAIL_FROM_EMAIL = MAIL['from_email'];
 
 	/** @var PHPMailer */
@@ -32,13 +36,13 @@ class Email {
 		$this->mail->isHTML();
 		$this->mail->setLanguage( 'br' );
 
-		if ( $_SERVER['HTTP_HOST'] == 'localhost:8000' ) {
-			// $this->mail->SMTPDebug = 4;
+		if ( 'localhost:8000' === $_SERVER['HTTP_HOST'] ) {
+			$this->mail->SMTPDebug = 4;
 		}
 
 		$this->mail->SMTPAuth = true;
 
-		if ( ! $_SERVER['HTTP_HOST'] == 'localhost:8000' ) {
+		if ( 'localhost:8000' !== $_SERVER['HTTP_HOST'] ) {
 			$this->mail->SMTPSecure = 'tls';
 			// $this->mail->SMTPSecure = "ssl";
 		}
@@ -60,8 +64,8 @@ class Email {
 		return $this;
 	}
 
-	public function attach( string $filePath, string $fileName ): Email {
-		$this->data->attach[ $filePath ] = $fileName;
+	public function attach( string $file_path, string $file_name ): Email {
+		$this->data->attach[ $file_path ] = $file_name;
 
 		return $this;
 	}
