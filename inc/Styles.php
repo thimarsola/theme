@@ -3,7 +3,7 @@
 /**
  * Loads the appropriate CSS stylesheet based on the current page type.
  */
-function loadCSS(): void {
+function load_css(): void {
 	if ( is_home() ) {
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/dist/css/style.css', array(), null, 'all' );
 	} elseif ( is_page() || is_archive() ) {
@@ -15,4 +15,4 @@ function loadCSS(): void {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'loadCSS' );
+add_action( 'wp_enqueue_scripts', 'load_css' );

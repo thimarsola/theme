@@ -1,10 +1,9 @@
 <?php
 
-// Custom Sitemap
 add_filter(
 	'wp_sitemaps_add_provider',
 	function ( $provider, $name ) {
-		if ( $name === 'users' ) {
+		if ( 'users' === $name ) {
 			return false;
 		}
 
