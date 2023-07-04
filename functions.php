@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . '/vendor/autoload.php';
 
 // Include classes and functions for formatting and modifying the theme.
 

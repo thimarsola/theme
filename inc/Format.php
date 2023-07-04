@@ -8,5 +8,5 @@
  * @return string Returns the formatted phone number.
  */
 function format_phone( string $phone ): string {
-    return str_replace( [ ' ', '(', ')', '-' ], '', $phone );
+	return str_replace( array( ' ', '(', ')', '-' ), '', $phone );
 }
