@@ -3,11 +3,10 @@
 /**
  * Returns the URL of the current page.
  *
- * @return string|null
+ * @return string
  */
-function get_current_page_url(): ?string {
-    global $wp;
-    $current_url = home_url( add_query_arg( array(), $wp->request ) );
+function get_current_page_url(): string {
+	global $wp;
 
-    return $current_url;
+	return home_url( add_query_arg( array(), $wp->request ) );
 }

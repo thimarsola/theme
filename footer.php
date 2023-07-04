@@ -3,21 +3,21 @@
 
 <!-- footer -->
 <footer class="footer">
-        <!-- header -->
-    <div class="footer__header hidden">
-        <h2>Rodapé</h2>
-    </div>
-    <!-- end of header -->
+		<!-- header -->
+	<div class="footer__header hidden">
+		<h2>Rodapé</h2>
+	</div>
+	<!-- end of header -->
    <!-- content -->
-   <?php get_template_part('template-parts/footer/footer', 'content'); ?>
+   <?php get_template_part( 'template-parts/footer/footer', 'content' ); ?>
    <!-- end of content -->
 
    <!-- copyright -->
-   <?php get_template_part('template-parts/footer/footer', 'copyright'); ?>
+   <?php get_template_part( 'template-parts/footer/footer', 'copyright' ); ?>
    <!-- end of copyright -->
 
    <!-- developer -->
-   <?php get_template_part('template-parts/footer/footer', 'developer'); ?>
+   <?php get_template_part( 'template-parts/footer/footer', 'developer' ); ?>
    <!-- end of developer -->
 </footer>
 <!-- end of footer -->

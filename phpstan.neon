@@ -1,0 +1,10 @@
+#$ vendor/bin/phpstan analyze
+
+parameters:
+	level: 6
+	inferPrivatePropertyTypeFromConstructor: true
+	paths:
+		- functions.php
+		- inc/
+		- source/
+		- template-parts/
