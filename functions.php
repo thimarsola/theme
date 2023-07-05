@@ -33,9 +33,6 @@ require_once get_template_directory() . '/inc/Thumbnails.php';
 // Add support for post excerpts.
 require_once get_template_directory() . '/inc/Excerpt.php';
 
-// Add support for paginated posts.
-require_once get_template_directory() . '/inc/Pagination.php';
-
 // Add support for generating a sitemap.
 require_once get_template_directory() . '/inc/Sitemap.php';
 
@@ -53,3 +50,6 @@ require_once get_template_directory() . '/inc/Title.php';
 
 // Get the URL for use in the <head> section.
 require_once get_template_directory() . '/inc/Url.php';
+
+// Add support for paginated categories.
+require_once get_template_directory() . '/inc/Pagination.php';

@@ -1,0 +1,68 @@
+@use '../../abstracts' as *;
+
+.highlight {
+  position: relative;
+
+  &__row {
+    &__card {
+      $this: &;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 1000ms;
+
+      &:hover {
+        #{$this} {
+          &__image {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+
+      &__image {
+        img {
+          transform: scale(1);
+          transition-property: all;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-duration: 1000ms;
+        }
+      }
+
+      &__wrapper {
+        &__header {
+          h3 {
+            border-left: 4px solid var(--clr-primary-400);
+          }
+        }
+      }
+    }
+  }
+
+  //breakpoint 810px
+  @include bp(811px) {
+    &__row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  //breakpoint 428px
+  @include bp(429px) {
+    &__header {
+      h2 {
+        font-size: toRem(30);
+        line-height: toRem(36);
+      }
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+
+      &__card {
+        &__image {
+          height: toRem(176);
+        }
+      }
+    }
+  }
+}

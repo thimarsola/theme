@@ -1,45 +1,70 @@
 @use "../abstracts" as *;
 
-.pagination__nav {
-    &__list {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: toRem(8);
-        flex-direction: row;
+.blog {
+	&__pagination {
+		.page-numbers {
+			display: flex;
+			justify-content: center;
+			gap: toRem(16);
+			flex-wrap: wrap;
 
-        &__item {
-            width: toRem(48);
-            height: toRem(48);
-            font-size: toRem(16);
-            line-height: 1.1 !important;
-            background: transparent;
-            border-radius: 3px;
-            @include transition(all);
+			li {
+				span,
+				a {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: toRem(48);
+					height: toRem(48);
+					border: 1px solid var(--clr-neutral-300);
+					border-radius: toRem(4);
+					background: transparent;
+				}
 
-            &:hover {
-                background: var(--clr-primary-500);
-                color: #fff;
-                border-color: var(--clr-primary-500);
-            }
+				a {
+					transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+					transform, filter, backdrop-filter;
+					transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+					transition-duration: 1000ms;
 
-            &__link {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: 1px solid var(--clr-neutral-500);
-                border-radius: inherit;
+					&:hover {
+						color: var(--clr-primary-950);
+						border-color: var(--clr-primary-500);
+						background: var(--clr-primary-500);
+					}
+				}
 
-                &--active {
-                    color: #fff;
-                    border-radius: 3px;
-                    border: 1px solid var(--clr-primary-500);
-                    background: var(--clr-primary-500);
-                    transform: none;
-                }
-            }
-        }
-    }
+				.current {
+					font-weight: var(--font-bold);
+					border-color: var(--clr-primary-500);
+					background: var(--clr-primary-500);
+					color: var(--clr-primary-950);
+				}
+			}
+
+			//breakpoint 428px
+			@include bp(429px) {
+				gap: toRem(8);
+				li {
+					span,
+					a {
+						width: toRem(40);
+						height: toRem(40);
+					}
+				}
+			}
+
+			//breakpoint 375px
+			@include bp(376px) {
+				gap: toRem(8);
+				li {
+					span,
+					a {
+						width: toRem(36);
+						height: toRem(36);
+					}
+				}
+			}
+		}
+	}
 }
