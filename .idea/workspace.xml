@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0e67dbb-6b5e-451a-80d4-39a8116cfa4a" name="Changes" comment="installing phpstan, phpcodesniffer, php-parallel, setting up">
-      <change beforePath="$PROJECT_DIR$/.husky/pre-commit" beforeDir="false" afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="d0e67dbb-6b5e-451a-80d4-39a8116cfa4a" name="Changes" comment="blog and categories were included">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Keywords.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Keywords.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Scripts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Sitemap.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Sitemap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Styles.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Styles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/Title.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/Title.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/sidebar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Support/Email.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Email.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Support/Sender.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Support/Sender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/component/component-tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/component/component-tags.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-content.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-content.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-copyright.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-copyright.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/footer/footer-developer.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/footer/footer-developer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/header/cookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/header/cookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/header/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/header/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/pages/page-policy.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/pages/page-policy.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,24 +55,24 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "WSL",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "WSL",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "//wsl$/Ubuntu-22.04/home/marsola/projects/theme",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm&quot;: &quot;WSL&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm&quot;: &quot;WSL&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/home/marsola/projects/theme&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu-22.04\home\marsola\projects\theme" />
@@ -113,7 +90,17 @@
       <workItem from="1688482441355" duration="1127000" />
       <workItem from="1688483605468" duration="487000" />
       <workItem from="1688505522539" duration="1340000" />
+      <workItem from="1688559801265" duration="10000" />
     </task>
+    <task id="LOCAL-00001" summary="blog and categories were included">
+      <option name="closed" value="true" />
+      <created>1688527787073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688527787073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +116,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="blog and categories were included" />
+    <option name="LAST_COMMIT_MESSAGE" value="blog and categories were included" />
   </component>
 </project>
