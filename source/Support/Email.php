@@ -7,26 +7,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use stdClass;
 
 class Email {
-	const MAIL_HOST = MAIL['host'];
-
-	const MAIL_PORT = MAIL['port'];
-
-	const MAIL_USER = MAIL['user'];
-
-	const MAIL_PASS = MAIL['passwd'];
-
-	const MAIL_FROM_NAME = MAIL['from_name'];
-
-	const MAIL_FROM_EMAIL = MAIL['from_email'];
-
 	/** @var PHPMailer */
-	private PHPMailer $mail;
+	private $mail;
 
 	/** @var stdClass */
-	private stdClass $data;
+	private $data;
 
 	/** @var Exception */
-	private Exception $error;
+	private $error;
 
 	public function __construct() {
 		$this->mail = new PHPMailer( true );
@@ -37,22 +25,22 @@ class Email {
 		$this->mail->setLanguage( 'br' );
 
 		if ( 'localhost:8000' === $_SERVER['HTTP_HOST'] ) {
-			$this->mail->SMTPDebug = 4;
+			//          $this->mail->SMTPDebug = 4;
 		}
 
 		$this->mail->SMTPAuth = true;
 
 		if ( 'localhost:8000' !== $_SERVER['HTTP_HOST'] ) {
 			$this->mail->SMTPSecure = 'tls';
-			// $this->mail->SMTPSecure = "ssl";
+			//        $this->mail->SMTPSecure = "ssl";
 		}
 
 		$this->mail->CharSet = 'utf-8';
 
-		$this->mail->Host     = self::MAIL_HOST;
-		$this->mail->Port     = (int) self::MAIL_PORT;
-		$this->mail->Username = (string) self::MAIL_USER;
-		$this->mail->Password = (string) self::MAIL_PASS;
+		$this->mail->Host     = MAIL['host'];
+		$this->mail->Port     = (int) MAIL['port'];
+		$this->mail->Username = (string) MAIL['user'];
+		$this->mail->Password = (string) MAIL['passwd'];
 	}
 
 	public function add( string $subject, string $body, string $recipient_name, string $recipient_email ): Email {
@@ -70,7 +58,7 @@ class Email {
 		return $this;
 	}
 
-	public function send( string $from_name = self::MAIL_FROM_NAME, string $from_email = self::MAIL_FROM_EMAIL ): bool {
+	public function send( string $from_name = MAIL['from_name'], string $from_email = MAIL['from_email'] ): bool {
 		try {
 			$this->mail->Subject = $this->data->subject;
 			$this->mail->msgHTML( $this->data->body );
