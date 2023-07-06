@@ -12,14 +12,14 @@ STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".php\{0,1
 
 for FILE in $STAGED_FILES
 do
-  ./vendor/squizlabs/php_codesniffer/bin/phpcbf "${FILE}" > /dev/null >&1;
+  ./vendor/squizlabs/php_codesniffer/bin/phpcbf "${FILE}";
   git add "${FILE}"
 done;
-
-exit 0;
 
 ./vendor/squizlabs/php_codesniffer/bin/phpcs
 if [ $? -ne 0 ]; then
   echo "Opa! Deu ruim aqui com PHP Codesniffer. Arrume antes de continuar... 😉"
   exit 1;
 fi;
+
+exit 0;
