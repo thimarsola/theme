@@ -5,4 +5,5 @@ source/Config.php
 composer.phar
 .DS_Store
 package-lock.json
-.idea/**/*
+.idea
+.idea/workspace.xml
