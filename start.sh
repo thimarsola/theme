@@ -5,7 +5,7 @@ echo " "
 echo "Start project ..."
 npm install
 echo " "
-composer update
+composer install
 mv source/Config-example.php source/Config.php
 echo " "
 echo "Digite o nome do pacote(example-name):"
@@ -21,7 +21,7 @@ echo " "
 echo "Digite o nome do repositório no Github(Projeto-Name):"
 printf ""
 read repoName
-sed -i "s/repo-name/$repoName/g" package.json
+sed -i "s/repo-name/$repoName/g" package.json README.md
 echo " "
 gh repo create $repoName --private
 echo " "
