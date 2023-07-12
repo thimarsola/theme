@@ -41,6 +41,19 @@ function get_picture( string $name, string $alt, string $class = null, string $e
     ';
 }
 
+/**
+ * @return string
+ */
+function thumbnail(): string {
+	if ( is_single() ) {
+		$thumb = get_the_post_thumbnail_url( get_the_ID(), 'share' );
+	} else {
+		$thumb = get_image( SITE['image'] );
+	}
+
+	return $thumb;
+}
+
 
 /**
  * Sets up custom image sizes for the theme.

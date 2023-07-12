@@ -9,15 +9,15 @@
 	</div>
 	<!-- end of header -->
 	<!-- content -->
-	<?php get_template_part( 'template-parts/footer/footer', 'content' ); ?>
+	<?php get_template_part( 'template-parts/footer/content' ); ?>
 	<!-- end of content -->
 
 	<!-- copyright -->
-	<?php get_template_part( 'template-parts/footer/footer', 'copyright' ); ?>
+	<?php get_template_part( 'template-parts/footer/content', 'copyright' ); ?>
 	<!-- end of copyright -->
 
 	<!-- developer -->
-	<?php get_template_part( 'template-parts/footer/footer', 'developer' ); ?>
+	<?php get_template_part( 'template-parts/footer/content', 'developer' ); ?>
 	<!-- end of developer -->
 </footer>
 <!-- end of footer -->

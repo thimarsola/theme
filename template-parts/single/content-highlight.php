@@ -1,6 +1,6 @@
 <!-- card -->
 <a
-	class="link-primary-500 text-neutral-900"
+	class="link-primary-400 text-neutral-900"
 	href="<?php echo get_the_permalink(); ?>"
 	title="Leia esse artigo"
 >
