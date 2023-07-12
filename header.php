@@ -37,12 +37,7 @@
 	<meta property="og:locale" content="<?php echo SITE['locale']; ?>">
 	<meta property="og:region" content="Brasil">
 	<meta property="og:title" content="<?php echo SITE['name']; ?>">
-	<meta property="og:image" content="
-	<?php
-	echo( ! is_single() ? get_image( SITE['image'] ) :
-		get_the_post_thumbnail_url( get_the_ID(), 'share' ) );
-	?>
-		">
+	<meta property="og:image" content="<?php echo thumbnail(); ?>">
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="700">
 	<meta property="og:image:height" content="500">
@@ -54,12 +49,7 @@
 	<!-- SCHEMA.ORG -->
 	<meta itemprop="name" content="<?php echo SITE['name']; ?>">
 	<meta itemprop="description" content="<?php echo get_description(); ?>">
-	<meta itemprop="image" content="
-<?php
-	echo( ! is_single() ? get_image( SITE['image'] ) :
-		get_the_post_thumbnail_url( get_the_ID(), 'share' ) );
-	?>
-	">
+	<meta itemprop="image" content="<?php echo thumbnail(); ?>">
 	<meta itemprop="url" content="<?php echo esc_url( get_current_page_url() ); ?>">
 	<meta itemprop="author" content="<?php echo DEV['name']; ?>">
 	<meta itemprop="headline" content="<?php echo get_title_head(); ?>">
@@ -69,19 +59,14 @@
 	<meta name="twitter:domain" content="<?php echo SITE['domain']; ?>">
 	<meta name="twitter:title" content="<?php echo SITE['name']; ?>">
 	<meta name="twitter:description" content="<?php echo get_description(); ?>">
-	<meta name="twitter:image" content="
-<?php
-	echo( ! is_single() ? get_image( SITE['image'] ) :
-		get_the_post_thumbnail_url( get_the_ID(), 'share' ) );
-	?>
-	">
+	<meta name="twitter:image" content="<?php echo thumbnail(); ?>">
 	<meta name="twitter:url" content="<?php echo esc_url( get_current_page_url() ); ?>">
 
 	<!-- font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Kodchasan:wght@400;500;600;700&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lora:wght@400;600&display=swap"
 		rel="stylesheet">
 
 	<!-- standard -->
@@ -127,11 +112,11 @@
 <?php if ( ! is_404() ) : ?>
 
 <!-- header -->
-	<?php get_template_part( 'template-parts/header/header', 'header' ); ?>
+	<?php get_template_part( 'template-parts/header/content', 'header' ); ?>
 <!-- end of header -->
 
 <!-- whatsapp -->
-	<?php get_template_part( 'template-parts/header/header', 'whatsapp' ); ?>
+	<?php get_template_part( 'template-parts/header/content', 'whatsapp' ); ?>
 <!-- end of whatsapp -->
 
 <!-- cookies -->
