@@ -2,11 +2,11 @@
 
 <?php if ( is_page( 'Blog' ) ) : ?>
 	<!-- highlight -->
-	<?php get_template_part( 'template-parts/pages/blog/page', 'highlight' ); ?>
+	<?php get_template_part( 'template-parts/pages/blog/content', 'highlight' ); ?>
 	<!-- end of highlight -->
 
 	<!-- blog -->
-	<?php get_template_part( 'template-parts/pages/blog/page', 'blog' ); ?>
+	<?php get_template_part( 'template-parts/pages/blog/content', 'blog' ); ?>
 	<!-- end of blog -->
 <?php endif; ?>
 

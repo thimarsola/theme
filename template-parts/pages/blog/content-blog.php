@@ -1,48 +1,79 @@
-<!-- card -->
-<article class="blog__row__card flex flex-col gap-8">
-	<!-- image -->
-	<div class="blog__row__card__image w-full h-60 overflow-hidden">
-		<a href="<?php echo get_the_permalink(); ?>">
-			<?php
-			/**
-			 * @param  array<int>  $args
-			 */
-			$id = $args['id'] ?? '';
+<?php
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-			echo get_the_post_thumbnail(
-				$id,
-				'large',
-				array( 'class' => 'w-full h-full object-cover object-center' )
-			);
-			?>
-		</a>
-	</div>
-	<!-- end of image -->
+$args = array(
+	'post_type'      => 'post',
+	'post__not_in'   => get_option( 'sticky_posts' ),
+	'posts_per_page' => 9,
+	'order'          => 'DESC',
+	'paged'          => $paged,
+);
 
-	<!-- wrapper -->
-	<div class="blog__row__card__wrapper flex-1">
+if ( is_archive() ) {
+	$category_name         = single_cat_title( '', false );
+	$args['category_name'] = $category_name;
+}
+
+$query = new WP_Query( $args );
+?>
+<section class="blog py-16 <?php echo( is_paged() || is_archive() ? null : 'bg-primary-50' ); ?>">
+	<div class="container">
 		<!-- header -->
-		<header class="blog__row__card__wrapper__header mb-8">
-			<time class="text-sm text-neutral-400" datetime="<?php echo get_the_date( 'Y-m-d' ); ?>">
-				<?php echo ucfirst( get_the_date( 'F j, Y' ) ); ?>
-			</time>
-
-			<h3 class="mt-3 pl-6 font-medium text-xl text-neutral-900">
-				<a
-					class="link-primary-500"
-					href="<?php echo get_the_permalink(); ?>">
-					<?php echo get_the_title(); ?>
-				</a>
-			</h3>
+		<header class="blog__header mb-10 text-center">
+			<h2 class="font-medium text-4xl text-neutral-900">Conheça os nossos artigos</h2>
 		</header>
 		<!-- end of header -->
 
-		<!-- body -->
-		<div class="blog__row__card__wrapper__body text-justify">
-			<p class="text-neutral-500 leading-relaxed"><?php echo get_the_excerpt(); ?></p>
+		<!-- row -->
+		<div class="blog__row grid <?php echo( ! $query->have_posts() ? 'grid-cols-1' : 'grid-cols-3' ); ?> gap-8">
+			<?php
+			if ( $query->have_posts() ) {
+				while ( $query->have_posts() ) {
+					$query->the_post();
+					get_template_part(
+						'template-parts/pages/blog/content',
+						'card-blog',
+						array(
+							'id' =>
+								$query->post->ID,
+						)
+					);
+				}
+			} else {
+				echo '<p class="text-center">Não existem artigos publicados no momento</p>';
+			}
+			?>
 		</div>
-		<!-- end of body -->
+		<!-- end of row -->
+
+		<?php if ( $query->max_num_pages > 1.0 ) : ?>
+			<!-- pagination -->
+			<div class="blog__pagination mt-10">
+				<nav class="pagination__nav">
+					<h2 class="hidden">Menu de Paginação</h2>
+
+					<?php
+					$big = 999999999;
+
+					echo paginate_links(
+						array(
+							'base'      => str_replace( (string) $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+							'format'    => '?paged=%#%',
+							'current'   => max( 1, get_query_var( 'paged' ) ),
+							'total'     => $query->max_num_pages,
+							'prev_text' => '<i class="ri-arrow-left-s-line"></i>',
+							'next_text' => '<i class="ri-arrow-right-s-line"></i>',
+							'type'      => 'list',
+							'mid_size'  => 1,
+						)
+					);
+					?>
+				</nav>
+			</div>
+			<!-- end of pagination -->
+			<?php
+			wp_reset_postdata();
+		endif;
+		?>
 	</div>
-	<!-- end of wrapper -->
-</article>
-<!-- end of card -->
+</section>
