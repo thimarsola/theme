@@ -1,5 +1,11 @@
 //convert font size to rem
 @function toRem($value) {
-    $remValue: ($value / 16) + rem;
-    @return $remValue;
+	$remValue: ($value / 16) + rem;
+	@return $remValue;
 }
+
+$base-path: "/wp-content/themes/theme/dist/images/";
+@function imagePath($filename) {
+	@return url(#{ $base-path } + #{ $filename });
+}
+
