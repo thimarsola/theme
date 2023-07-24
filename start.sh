@@ -6,6 +6,9 @@ echo "Start project ..."
 npm install
 echo " "
 composer install
+echo " "
+composer require dealerdirect/phpcodesniffer-composer-installer
+echo " "
 mv source/Config-example.php source/Config.php
 echo " "
 echo "Digite o nome do pacote(example-name):"

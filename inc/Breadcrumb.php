@@ -1,30 +1,30 @@
 <?php
 
 /**
- * @param string $home_text
- * @param string $separator
- * @param string $class_wrapper
- * @param string $class_item
- * @param string $class_separator
- * @param string $class_link
- * @param string $class_current
+ * @param  string  $home_text
+ * @param  string  $separator
+ * @param  string  $class_wrapper
+ * @param  string  $class_item
+ * @param  string  $class_separator
+ * @param  string  $class_link
+ * @param  string  $class_current
  */
 function get_breadcrumb(
-	$home_text = 'Home',
-	$separator = '|',
-	$class_wrapper = 'breadcrumb',
-	$class_item = 'breadcrumb-item',
-	$class_separator = 'separator',
-	$class_link = 'breadcrumb-link',
-	$class_current = 'breadcrumb-current'
+	string $home_text = 'Home',
+	string $separator = '|',
+	string $class_wrapper = 'breadcrumb',
+	string $class_item = 'breadcrumb-item',
+	string $class_separator = 'separator',
+	string $class_link = 'breadcrumb-link',
+	string $class_current = 'breadcrumb-current'
 ): void {
 	$post = get_queried_object();
 
 	echo '<ol class="' . esc_attr( $class_wrapper ) . '">';
 
 	echo
-	'<li class="' . esc_attr( $class_item ) . '">
-            <a class="' . esc_attr( $class_link ) . '" href="' . esc_url( home_url() ) . '">' . esc_html( $home_text ) . '</a>
+		'<li class="' . esc_attr( $class_item ) . '">
+            <a class="' . esc_attr( $class_link ) . '" href="' . esc_url( home_url() ) . '">' . $home_text . '</a>
         </li>';
 
 	if ( is_category() || is_single() ) {
@@ -40,7 +40,7 @@ function get_breadcrumb(
 			);
 
 			echo
-			'<li class="' . esc_attr( $class_item ) . '">
+				'<li class="' . esc_attr( $class_item ) . '">
                     <a class="' . esc_attr( $class_link ) . '" href="' .
 				esc_url( get_the_permalink( $query->post ) ) . '">' . esc_html( $query->post->post_title ) . '</a>
                 </li>';
@@ -52,7 +52,7 @@ function get_breadcrumb(
 				foreach ( $categories as $category ) {
 					echo '<li><span class="' . esc_attr( $class_separator ) . '">' . $separator . '</span></li>';
 					echo
-					'<li class="' . esc_attr( $class_item ) . '">
+						'<li class="' . esc_attr( $class_item ) . '">
                             <a class="' . esc_attr( $class_link ) . '" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>
                         </li>';
 				}
@@ -62,7 +62,7 @@ function get_breadcrumb(
 		if ( is_single() ) {
 			echo '<li><span class="' . esc_attr( $class_separator ) . '">' . $separator . '</span></li>';
 			echo
-			'<li class="' . esc_attr( $class_item ) . '">
+				'<li class="' . esc_attr( $class_item ) . '">
                 <span class="' . esc_attr( $class_current ) . '">' . get_the_title() . '</span>
             </li>';
 		}
@@ -77,7 +77,7 @@ function get_breadcrumb(
 			foreach ( $ancestors as $ancestor ) {
 				echo '<li><span class="' . esc_attr( $class_separator ) . '">' . $separator . '</span></li>';
 				echo
-				'<li class="' . esc_attr( $class_item ) . '">
+					'<li class="' . esc_attr( $class_item ) . '">
                         <a class="' . esc_attr( $class_link ) . '" href="' . esc_url( get_permalink( $ancestor ) ) . '">' . esc_html( get_the_title( $ancestor ) ) . '</a>
                     </li>';
 			}
@@ -85,7 +85,7 @@ function get_breadcrumb(
 
 		echo '<li><span class="' . esc_attr( $class_separator ) . '">' . $separator . '</span></li>';
 		echo
-		'<li class="' . esc_attr( $class_item ) . '">
+			'<li class="' . esc_attr( $class_item ) . '">
                 <span class="' . esc_attr( $class_current ) . '">' . get_the_title() . '</span>
             </li>';
 	} elseif ( is_search() ) {
@@ -97,3 +97,4 @@ function get_breadcrumb(
 
 	echo '</ol>';
 }
+
