@@ -17,7 +17,7 @@ const SITE = array(
 	'domain' => '',
 	'locale' => 'pt_BR',
 	'lang'   => 'pt-BR',
-	'image'  => 'image.jpg',
+	'image'  => 'image.png',
 	'gtm'    => '',
 );
 
