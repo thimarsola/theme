@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-./vendor/bin/phpstan
+./vendor/bin/phpstan analyse --memory-limit=1024M
+
 if [ $? -ne 0 ]; then
   echo "Opa! Deu ruim aqui com PHPSTAN. Arrume antes de continuar... 😉"
   exit 1;

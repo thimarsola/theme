@@ -67,7 +67,7 @@ mix.setPublicPath('./dist')
 		whitelistPatterns: [/hljs/],
 	},
 }).browserSync({
-	proxy: 'localhost:8000',
+	proxy: 'proxy-name.test',
 	files: ['dist/js/*.js', 'dist/css/*.css', 'dist/images/*', '**/*.php'],
 });
 

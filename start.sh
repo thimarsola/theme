@@ -11,9 +11,6 @@ echo " "
 # run composer install
 composer install
 echo " "
-# install phpcodesniffer
-composer require dealerdirect/phpcodesniffer-composer-installer
-echo " "
 # copy config file
 mv source/Config-example.php source/Config.php
 echo " "
@@ -34,7 +31,10 @@ gh repo create $repoName --private
 echo " "
 echo "Digite o domínio do projeto(domain.com.br):"
 read domain
-sed -i '' "s/domain/$domain/g" style.css README.md
+echo " "
+echo "Digite o proxy do projeto(proxy):"
+read proxy
+sed -i '' "s/proxy-name/$proxy/g" webpack.mix.js
 git init
 git add README.md
 git commit -m "KEY-0: start project"
@@ -47,7 +47,9 @@ git add .
 git commit -m "KEY-0: wip"
 git checkout -b feature/KEY-01-initial-config
 # install husky
-npm install husky --save-dev
+npm install husky --save-dev|
 npx husky install
 echo " "
+# install phpcodesniffer
+composer require dealerdirect/phpcodesniffer-composer-installer
 echo "---------- >>> Finish Config <<< ----------"
