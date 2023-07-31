@@ -19,26 +19,22 @@ mv source/Config-example.php source/Config.php
 echo " "
 # configure repository
 echo "Digite o nome do pacote(example-name):"
-printf ""
 read packageName
-sed "s/package-name/$packageName/g" package.json composer.json
+sed -i '' "s/package-name/$packageName/g" package.json composer.json
 echo " "
 echo "Digite o nome do projeto(Name):"
-printf ""
-read projetName
-sed "s/project-name/$projetName/g" package.json composer.json README.md style.css
+read projectName
+sed -i '' "s/project-name/$projectName/g" package.json composer.json README.md style.css
 echo " "
 echo "Digite o nome do repositório no Github(Projeto-Name):"
-printf ""
 read repoName
-sed "s/repo-name/$repoName/g" package.json README.md
+sed -i '' "s/repo-name/$repoName/g" package.json README.md
 echo " "
 gh repo create $repoName --private
 echo " "
-echo "Digite o dominio do projeto(domain.com.br):"
-printf ""
+echo "Digite o domínio do projeto(domain.com.br):"
 read domain
-sed "s/domain/$domain/g" style.css README.md
+sed -i '' "s/domain/$domain/g" style.css README.md
 git init
 git add README.md
 git commit -m "KEY-0: start project"
