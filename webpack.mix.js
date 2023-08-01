@@ -68,6 +68,8 @@ mix.setPublicPath('./dist')
 	},
 }).browserSync({
 	proxy: 'proxy-name.test',
+	port: 8000,
+	open: false,
 	files: ['dist/js/*.js', 'dist/css/*.css', 'dist/images/*', '**/*.php'],
 });
 
